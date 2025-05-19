@@ -86,10 +86,27 @@
 </section>
 
 <section id="contacto">
-  <h2>Contacto</h2>
-  <p>📧 Correo: info@afeaes.org</p>
-  <p>📍 Dirección: Calle Ejemplo 123, Ciudad</p>
-  <p>📞 Teléfono: +34 600 123 456</p>
+  <h2>Contáctanos</h2>
+  <p>¿Tienes dudas, sugerencias o necesitas ayuda? Rellena este formulario y nos pondremos en contacto contigo lo antes posible.</p>
+
+  <form action="https://formsubmit.co/afeaes@hotmail.com" method="POST">
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" id="nombre" name="name" required><br><br>
+
+    <label for="email">Correo electrónico:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="mensaje">Mensaje:</label><br>
+    <textarea id="mensaje" name="message" rows="5" required></textarea><br><br>
+
+    <!-- Opcional: para evitar el captcha, puedes registrar el correo en FormSubmit -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <!-- Mensaje de gracias personalizado (redirige tras enviar) -->
+    <input type="hidden" name="_next" value="https://afeaes.github.io/gracias.html">
+
+    <button type="submit">Enviar</button>
+  </form>
 </section>
 
 <footer>
