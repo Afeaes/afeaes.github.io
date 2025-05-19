@@ -5,49 +5,105 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AFEAES - Asociación</title>
   <style>
+    :root {
+      --azul-claro: #a3c4f3;
+      --azul-medio: #769fcd;
+      --fondo: #fef6f0;
+      --blanco: #ffffff;
+      --amarillo: #fcbf49;
+      --texto: #333;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--fondo);
+      color: var(--texto);
     }
+
     header {
-      background-color: #2a7ae2;
+      background-color: var(--azul-claro);
       color: white;
-      padding: 20px;
+      padding: 40px 20px;
       text-align: center;
     }
+
     nav {
-      background-color: #1957a1;
+      background-color: var(--azul-medio);
       display: flex;
       justify-content: center;
       gap: 20px;
-      padding: 10px;
+      padding: 12px;
     }
+
     nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
+      font-size: 1rem;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
+
     section {
-      max-width: 800px;
+      max-width: 900px;
       margin: 40px auto;
-      padding: 20px;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 30px;
+      background-color: var(--blanco);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
     }
+
     h2 {
-      color: #2a7ae2;
+      color: var(--azul-medio);
+      margin-top: 0;
     }
+
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #eee;
-      color: #555;
+      background-color: #ddd;
+      color: #444;
+      margin-top: 60px;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: var(--amarillo);
+      color: #333;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #f9a826;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
@@ -62,7 +118,7 @@
   <a href="#inicio">Inicio</a>
   <a href="#quienes-somos">Quiénes somos</a>
   <a href="#servicios">Servicios</a>
-  <a href="#contacto">Contacto</a>
+  <a href="#contacto">Contáctanos</a>
 </nav>
 
 <section id="inicio">
@@ -90,19 +146,16 @@
   <p>¿Tienes dudas, sugerencias o necesitas ayuda? Rellena este formulario y nos pondremos en contacto contigo lo antes posible.</p>
 
   <form action="https://formsubmit.co/afeaes@hotmail.com" method="POST">
-    <label for="nombre">Nombre:</label><br>
-    <input type="text" id="nombre" name="name" required><br><br>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="name" required>
 
-    <label for="email">Correo electrónico:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email" required>
 
-    <label for="mensaje">Mensaje:</label><br>
-    <textarea id="mensaje" name="message" rows="5" required></textarea><br><br>
+    <label for="mensaje">Mensaje:</label>
+    <textarea id="mensaje" name="message" rows="5" required></textarea>
 
-    <!-- Opcional: para evitar el captcha, puedes registrar el correo en FormSubmit -->
     <input type="hidden" name="_captcha" value="false">
-
-    <!-- Mensaje de gracias personalizado (redirige tras enviar) -->
     <input type="hidden" name="_next" value="https://afeaes.github.io/gracias.html">
 
     <button type="submit">Enviar</button>
