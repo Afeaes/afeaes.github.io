@@ -7,6 +7,7 @@
   --texto: #333;
 }
 
+/* Estilos generales */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -14,6 +15,7 @@ body {
   color: var(--texto);
 }
 
+/* Encabezado */
 header {
   background-color: var(--azul-claro);
   color: white;
@@ -21,6 +23,7 @@ header {
   text-align: center;
 }
 
+/* Navegación */
 nav {
   background-color: var(--azul-medio);
   display: flex;
@@ -40,28 +43,49 @@ nav a:hover {
   text-decoration: underline;
 }
 
-section {
+/* Secciones */
+.seccion {
+  display: none;
   max-width: 900px;
   margin: 40px auto;
   padding: 30px;
   background-color: var(--blanco);
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
 }
 
-h2 {
-  color: var(--azul-medio);
-  margin-top: 0;
+.seccion:target {
+  display: block;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #ddd;
-  color: #444;
-  margin-top: 60px;
+/* Mostrar sección bienvenida por defecto si no hay # en la URL */
+body:not(:has(:target)) #bienvenida {
+  display: block;
 }
 
+/* Botones de bienvenida */
+.botones-inicio {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.botones-inicio a {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: var(--amarillo);
+  color: #333;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.botones-inicio a:hover {
+  background-color: #f9a826;
+}
+
+/* Formularios */
 form input,
 form textarea {
   width: 100%;
@@ -88,13 +112,29 @@ button:hover {
   background-color: #f9a826;
 }
 
+/* Otros */
 ul {
   padding-left: 20px;
 }
 
+/* Pie de página */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #ddd;
+  color: #444;
+  margin-top: 60px;
+}
+
+/* Responsive */
 @media (max-width: 600px) {
   nav {
     flex-direction: column;
     align-items: center;
+  }
+
+  .botones-inicio {
+    flex-direction: column;
+    gap: 20px;
   }
 }
