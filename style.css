@@ -313,6 +313,7 @@ button:hover {
   padding: 10px 0;
   z-index: 1000;
   min-width: 200px;
+  list-style: none;
 }
 
 .has-submenu:hover > .submenu {
