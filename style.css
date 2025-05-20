@@ -323,6 +323,7 @@ button:hover {
 .submenu li {
   padding: 8px 20px;
   white-space: nowrap;
+  list-style: none;
 }
 
 .submenu li a {
