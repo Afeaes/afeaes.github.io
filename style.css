@@ -305,7 +305,7 @@ button:hover {
 .submenu {
   display: none;
   position: absolute;
-  top: calc(100% + 4px); /* ✅ separa el submenú para que se vea la línea animada */
+  top: calc(100% + 5px); /* ✅ separa el submenú para que se vea la línea animada */
   left: 0;
   background-color: #e3f4d6;
   border-radius: 0 0 8px 8px;
