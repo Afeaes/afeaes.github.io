@@ -1,69 +1,100 @@
 :root {
-  --azul-claro: #a3c4f3;
-  --azul-medio: #769fcd;
-  --fondo: #fef6f0;
+  --verde-claro: #f1f9f4;
+  --verde-pastel: #a9d6b2;
+  --verde-medio: #75b79e;
+  --verde-oscuro: #4c9c84;
+  --amarillo-suave: #ffd166;
+  --amarillo-hover: #fcbf49;
+  --texto: #2f2f2f;
+  --sombra: rgba(0, 0, 0, 0.05);
   --blanco: #ffffff;
-  --amarillo: #fcbf49;
-  --texto: #333;
 }
 
-/* Estilos generales */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--fondo);
+  background-color: var(--verde-claro);
   color: var(--texto);
 }
 
-/* Encabezado */
 header {
-  background-color: var(--azul-claro);
-  color: white;
+  background-color: var(--verde-pastel);
+  color: var(--texto);
   padding: 40px 20px;
   text-align: center;
+  box-shadow: 0 2px 10px var(--sombra);
 }
 
-/* Navegación */
 nav {
-  background-color: var(--azul-medio);
+  background-color: var(--verde-medio);
   display: flex;
   justify-content: center;
-  gap: 20px;
-  padding: 12px;
+  gap: 24px;
+  padding: 14px 0;
+  box-shadow: 0 2px 6px var(--sombra);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 nav a {
-  color: white;
+  color: var(--blanco);
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1rem;
+  position: relative;
+  transition: color 0.3s;
 }
 
-nav a:hover {
-  text-decoration: underline;
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background-color: var(--amarillo-hover);
+  transition: width 0.3s ease-in-out;
 }
 
-/* Secciones */
+nav a:hover::after {
+  width: 100%;
+}
+
 .seccion {
   display: none;
   max-width: 900px;
-  margin: 40px auto;
-  padding: 30px;
+  margin: 60px auto;
+  padding: 40px;
   background-color: var(--blanco);
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px var(--sombra);
+  transition: all 0.4s ease;
 }
 
-.seccion:target {
+.seccion.visible {
   display: block;
 }
 
-/* Mostrar sección bienvenida por defecto si no hay # en la URL */
-body:not(:has(:target)) #bienvenida {
-  display: block;
+h2 {
+  color: var(--verde-oscuro);
+  margin-top: 0;
 }
 
-/* Botones de bienvenida */
+ul {
+  padding-left: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #ddeee2;
+  color: #444;
+  margin-top: 80px;
+  font-size: 0.9rem;
+}
+
+/* Botones destacados (inicio, contacto, etc.) */
 .botones-inicio {
   display: flex;
   justify-content: space-between;
@@ -73,64 +104,61 @@ body:not(:has(:target)) #bienvenida {
 .botones-inicio a {
   display: inline-block;
   padding: 15px 30px;
-  background-color: var(--amarillo);
-  color: #333;
+  background-color: var(--amarillo-suave);
+  color: var(--texto);
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-weight: bold;
-  transition: background-color 0.3s;
+  box-shadow: 0 4px 10px var(--sombra);
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .botones-inicio a:hover {
-  background-color: #f9a826;
+  background-color: var(--amarillo-hover);
+  transform: translateY(-2px);
 }
 
 /* Formularios */
 form input,
 form textarea {
   width: 100%;
-  padding: 10px;
-  margin-top: 6px;
-  margin-bottom: 16px;
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 20px;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 1rem;
+  background-color: #f9f9f9;
+  transition: border 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: var(--verde-medio);
+  outline: none;
 }
 
 button {
-  background-color: var(--amarillo);
-  color: #333;
+  background-color: var(--amarillo-suave);
+  color: var(--texto);
   border: none;
-  padding: 12px 20px;
+  padding: 12px 24px;
   font-size: 1rem;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
-  background-color: #f9a826;
-}
-
-/* Otros */
-ul {
-  padding-left: 20px;
-}
-
-/* Pie de página */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #ddd;
-  color: #444;
-  margin-top: 60px;
+  background-color: var(--amarillo-hover);
+  transform: translateY(-2px);
 }
 
 /* Responsive */
 @media (max-width: 600px) {
   nav {
     flex-direction: column;
-    align-items: center;
+    gap: 10px;
   }
 
   .botones-inicio {
