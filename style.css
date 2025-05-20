@@ -309,11 +309,12 @@ nav {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: var(--verde-medio);
+  background-color: #e3f4d6; /* verde pastel claro para contraste */
   border-radius: 0 0 8px 8px;
   box-shadow: 0 4px 8px var(--sombra);
   padding: 10px 0;
   z-index: 1000;
+  min-width: 200px;
 }
 
 .has-submenu:hover .submenu {
@@ -326,11 +327,17 @@ nav {
 }
 
 .submenu li a {
-  color: white;
+  color: var(--texto);
   font-weight: 500;
   text-decoration: none;
+  display: block;
 }
 
+.submenu li a:hover {
+  text-decoration: underline;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+</style>
 .submenu li a:hover {
   text-decoration: underline;
 }
