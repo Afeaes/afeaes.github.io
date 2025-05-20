@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AFEAES - Asociación</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -29,14 +29,25 @@
           <li><a href="codigo-etico.html">Código ético</a></li>
         </ul>
       </li>
-      <li><a href="#servicios">Servicios</a></li>
+      <li class="has-submenu">
+        <a href="#servicios">Servicios</a>
+        <ul class="submenu">
+          <li><a href="talleres.html">Talleres</a></li>
+          <li><a href="unidad-dia.html">Unidad de día</a></li>
+          <li><a href="usuarios.html">Usuarios</a></li>
+          <li><a href="familia-cuidadores.html">Familia y cuidadores</a></li>
+          <li><a href="voluntariado.html">Voluntariado</a></li>
+        </ul>
+      </li>
+      <li><a href="#hazte-socio">Hacerme socio</a></li>
       <li><a href="#contacto">Contáctanos</a></li>
+      <li><a href="#galeria">Galería de imágenes</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- Sección de bienvenida (mostrada al cargar) -->
-<section id="bienvenida" class="seccion visible">
+<!-- Sección principal: Inicio -->
+<section id="inicio" class="seccion visible">
   <h2>Bienvenido a AFEAES</h2>
   <p>Te acompañamos en tu camino hacia el bienestar social, físico y cognitivo.</p>
   <div class="botones-inicio">
@@ -45,52 +56,28 @@
   </div>
 </section>
 
-<section id="inicio" class="seccion">
-  <h2>Inicio</h2>
-  <p>Aquí podrás encontrar información sobre nuestra asociación y cómo participar.</p>
-</section>
-
-<section id="nuestra-asociacion" class="seccion visible">
+<!-- Sección: Nuestra asociación -->
+<section id="nuestra-asociacion" class="seccion">
   <h2>Nuestra asociación</h2>
   <p>Descubre todo lo que somos y hacemos. Selecciona un apartado para saber más.</p>
   <div class="galeria-asociacion">
-    <a href="quienes-somos.html" class="tarjeta">
-      <h3>Quiénes somos</h3>
-    </a>
-    <a href="equipo-humano.html" class="tarjeta">
-      <h3>Equipo humano</h3>
-    </a>
-    <a href="junta-directiva.html" class="tarjeta">
-      <h3>Junta directiva</h3>
-    </a>
-    <a href="instalaciones.html" class="tarjeta">
-      <h3>Instalaciones</h3>
-    </a>
-    <a href="codigo-etico.html" class="tarjeta">
-      <h3>Código ético</h3>
-    </a>
+    <a href="quienes-somos.html" class="tarjeta"><h3>Quiénes somos</h3></a>
+    <a href="equipo-humano.html" class="tarjeta"><h3>Equipo humano</h3></a>
+    <a href="junta-directiva.html" class="tarjeta"><h3>Junta directiva</h3></a>
+    <a href="instalaciones.html" class="tarjeta"><h3>Instalaciones</h3></a>
+    <a href="codigo-etico.html" class="tarjeta"><h3>Código ético</h3></a>
   </div>
 </section>
 
-<section id="quienes-somos" class="seccion">
-  <h2>Quiénes somos</h2>
-  <p>AFEAES brinda apoyo a personas afectadas por trastornos de ansiedad y estrés y a sus familias.</p>
-</section>
-
-<section id="servicios" class="seccion">
-  <h2>Servicios</h2>
-  <ul>
-    <li>Charlas y talleres formativos</li>
-    <li>Grupos de apoyo emocional</li>
-    <li>Orientación psicológica</li>
-    <li>Actividades de bienestar: yoga, meditación, etc.</li>
-  </ul>
+<!-- Secciones futuras -->
+<section id="hazte-socio" class="seccion">
+  <h2>Hazte socio</h2>
+  <p>Información para colaborar próximamente.</p>
 </section>
 
 <section id="contacto" class="seccion">
   <h2>Contáctanos</h2>
-  <p>¿Tienes dudas, sugerencias o necesitas ayuda? Rellena este formulario y nos pondremos en contacto contigo lo antes posible.</p>
-
+  <p>¿Tienes dudas o sugerencias? Escríbenos:</p>
   <form action="https://formsubmit.co/afeaes@hotmail.com" method="POST">
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="name" required>
@@ -108,28 +95,19 @@
   </form>
 </section>
 
-<section id="hazte-socio" class="seccion">
-  <h2>Hazte socio</h2>
-  <p>Únete a nuestra comunidad y colabora con nuestros proyectos.</p>
-  <ul>
-    <li>Recibe información exclusiva</li>
-    <li>Accede a nuestras actividades y talleres</li>
-    <li>Apoya el bienestar emocional de muchas personas</li>
-  </ul>
-  <p>Escríbenos a <strong>afeaes@hotmail.com</strong> para más información.</p>
+<section id="galeria" class="seccion">
+  <h2>Galería de imágenes</h2>
+  <p>Próximamente podrás ver aquí imágenes de nuestras actividades y eventos.</p>
 </section>
 
 <footer>
   <p><strong>Asoc. Alc. Familiares de Enfermos de Alzheimer "Esperanza" (AFEAES)</strong></p>
-  <p>Avd. Salud Gutiérrez, s/n<br>
-     Alcalá de Guadaíra (Sevilla)</p>
+  <p>Avd. Salud Gutiérrez, s/n<br>Alcalá de Guadaíra (Sevilla)</p>
   <p><a href="mailto:afeaes@hotmail.com">afeaes@hotmail.com</a> | Tel: 955 950 821</p>
   <p>&copy; 2025 AFEAES - Todos los derechos reservados</p>
 </footer>
 
-<!-- Scripts -->
 <script>
-  // Menú hamburguesa
   const toggleBtn = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
 
@@ -137,19 +115,19 @@
     navLinks.classList.toggle('show');
   });
 
-  // Mostrar sección correspondiente y ocultar las demás
   const secciones = document.querySelectorAll('.seccion');
 
   function mostrarSeccion() {
-    const hash = window.location.hash || "#bienvenida";
+    const hash = window.location.hash || '#inicio';
     secciones.forEach(sec => {
-      sec.classList.toggle("visible", "#" + sec.id === hash);
+      sec.classList.toggle('visible', '#' + sec.id === hash);
     });
   }
 
-  window.addEventListener("load", mostrarSeccion);
-  window.addEventListener("hashchange", mostrarSeccion);
+  window.addEventListener('load', mostrarSeccion);
+  window.addEventListener('hashchange', mostrarSeccion);
 </script>
 
 </body>
 </html>
+
