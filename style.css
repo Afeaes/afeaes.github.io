@@ -263,3 +263,75 @@ nav {
     padding: 12px 0;
   }
 }
+
+<!-- CSS sugerido (en style.css) para las tarjetas -->
+<style>
+.galeria-asociacion {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.tarjeta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--blanco);
+  color: var(--texto);
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--sombra);
+  padding: 40px 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.tarjeta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px var(--sombra);
+}
+
+.tarjeta h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+</style>
+
+<!-- CSS para el submenú desplegable -->
+<style>
+.has-submenu {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--verde-medio);
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 8px var(--sombra);
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.has-submenu:hover .submenu {
+  display: block;
+}
+
+.submenu li {
+  padding: 8px 20px;
+  white-space: nowrap;
+}
+
+.submenu li a {
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.submenu li a:hover {
+  text-decoration: underline;
+}
+</style>
