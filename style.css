@@ -178,14 +178,6 @@ button:hover {
 
 /* Menú hamburguesa */
 
-nav {
-  background-color: var(--verde-medio);
-  box-shadow: 0 2px 6px var(--sombra);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
 .nav-container {
   max-width: 1100px;
   margin: auto;
@@ -264,8 +256,7 @@ nav {
   }
 }
 
-<!-- CSS sugerido (en style.css) para las tarjetas -->
-<style>
+/* Tarjetas galería */
 .galeria-asociacion {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -296,11 +287,18 @@ nav {
   margin: 0;
   font-size: 1.2rem;
 }
-</style>
 
-<!-- CSS para el submenú desplegable -->
-<style>
+/* Submenú desplegable */
 .has-submenu {
+  position: relative;
+}
+
+.has-submenu > a {
+  position: relative;
+  z-index: 2;
+}
+
+.nav-links li {
   position: relative;
 }
 
@@ -309,7 +307,7 @@ nav {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #e3f4d6; /* verde pastel claro para contraste */
+  background-color: #e3f4d6;
   border-radius: 0 0 8px 8px;
   box-shadow: 0 4px 8px var(--sombra);
   padding: 10px 0;
@@ -317,7 +315,7 @@ nav {
   min-width: 200px;
 }
 
-.has-submenu:hover .submenu {
+.has-submenu:hover > .submenu {
   display: block;
 }
 
@@ -337,8 +335,3 @@ nav {
   text-decoration: underline;
   background-color: rgba(0, 0, 0, 0.05);
 }
-</style>
-.submenu li a:hover {
-  text-decoration: underline;
-}
-</style>
