@@ -26,8 +26,8 @@
   </div>
 </nav>
 
-<!-- Sección de bienvenida (solo visible al inicio) -->
-<section id="bienvenida" class="seccion">
+<!-- Sección de bienvenida (mostrada al cargar) -->
+<section id="bienvenida" class="seccion visible">
   <h2>Bienvenido a AFEAES</h2>
   <p>Te acompañamos en tu camino hacia el bienestar social, físico y cognitivo.</p>
   <div class="botones-inicio">
@@ -92,13 +92,29 @@
   <p>&copy; 2025 AFEAES - Todos los derechos reservados</p>
 </footer>
 
-  <script>
+<!-- Scripts -->
+<script>
+  // Menú hamburguesa
   const toggleBtn = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
 
   toggleBtn.addEventListener('click', () => {
     navLinks.classList.toggle('show');
   });
+
+  // Mostrar sección correspondiente y ocultar las demás
+  const secciones = document.querySelectorAll('.seccion');
+
+  function mostrarSeccion() {
+    const hash = window.location.hash || "#bienvenida";
+    secciones.forEach(sec => {
+      sec.classList.toggle("visible", "#" + sec.id === hash);
+    });
+  }
+
+  window.addEventListener("load", mostrarSeccion);
+  window.addEventListener("hashchange", mostrarSeccion);
 </script>
+
 </body>
 </html>
