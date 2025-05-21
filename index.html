@@ -124,10 +124,21 @@
   const toggleBtn = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
 
+  // Abrir/cerrar menú al hacer clic en el botón hamburguesa
   toggleBtn.addEventListener('click', () => {
     navLinks.classList.toggle('show');
   });
 
+  // Cerrar menú al hacer clic en un enlace del menú (solo si está abierto)
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (navLinks.classList.contains('show')) {
+        navLinks.classList.remove('show');
+      }
+    });
+  });
+
+  // Mostrar solo la sección correspondiente al hash
   const secciones = document.querySelectorAll('.seccion');
 
   function mostrarSeccion() {
@@ -136,6 +147,10 @@
       sec.classList.toggle('visible', '#' + sec.id === hash);
     });
   }
+
+  window.addEventListener('load', mostrarSeccion);
+  window.addEventListener('hashchange', mostrarSeccion);
+</script>
 
   window.addEventListener('load', mostrarSeccion);
   window.addEventListener('hashchange', mostrarSeccion);
