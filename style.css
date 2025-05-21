@@ -91,11 +91,14 @@ ul {
 .footer-bloques {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   background-color: #ddeee2;
   padding: 40px 20px;
   text-align: left;
   flex-wrap: wrap;
   gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .footer-bloques .bloque {
