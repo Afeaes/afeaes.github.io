@@ -83,6 +83,10 @@ h2 {
   margin-top: 0;
 }
 
+.titulo-bienvenida {
+  text-align: center;
+}
+
 ul {
   padding-left: 20px;
 }
