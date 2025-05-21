@@ -109,8 +109,8 @@ ul {
 .footer-bloques h4 {
   margin-bottom: 10px;
   font-size: 1.1rem;
-  color: var(--amarillo-hover);
-  text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  color: #d18b29;
+  
   position: relative;
 }
 
