@@ -87,22 +87,55 @@ ul {
   padding-left: 20px;
 }
 
-footer {
-  text-align: center;
-  padding: 30px 20px;
+/* NUEVO PIE DE PÁGINA en tres bloques */
+.footer-bloques {
+  display: flex;
+  justify-content: space-between;
   background-color: #ddeee2;
-  color: #444;
+  padding: 40px 20px;
+  text-align: left;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-bloques .bloque {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-bloques h4 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: var(--verde-oscuro);
+}
+
+.footer-bloques p {
+  margin: 0;
   font-size: 0.95rem;
+  color: #444;
   line-height: 1.6;
 }
 
-footer a {
+.footer-bloques a {
   color: inherit;
+  text-decoration: none;
+}
+
+.footer-bloques a:hover {
   text-decoration: underline;
 }
 
-footer a:hover {
-  text-decoration: none;
+/* Responsive footer */
+@media (max-width: 768px) {
+  .footer-bloques {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-bloques .bloque {
+    max-width: 300px;
+  }
 }
 
 /* Botones destacados (inicio, contacto, etc.) */
@@ -165,7 +198,7 @@ button:hover {
   transform: translateY(-2px);
 }
 
-/* Responsive */
+/* Responsive nav y botones */
 @media (max-width: 600px) {
   nav {
     flex-direction: column;
@@ -179,7 +212,6 @@ button:hover {
 }
 
 /* Menú hamburguesa */
-
 .nav-container {
   max-width: 1100px;
   margin: auto;
@@ -297,7 +329,7 @@ button:hover {
   }
 }
 
-/* Tarjetas galería */
+/* Galería */
 .galeria-asociacion {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -328,4 +360,5 @@ button:hover {
   margin: 0;
   font-size: 1.2rem;
 }
+
 
