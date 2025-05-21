@@ -108,9 +108,9 @@ ul {
 
 .footer-bloques h4 {
   margin-bottom: 10px;
-  font-size: 1.1rem;
-  color: #d18b29;
-  
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--amarillo-hover);
   position: relative;
 }
 
