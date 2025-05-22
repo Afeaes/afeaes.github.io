@@ -81,6 +81,7 @@ nav a:hover::after {
 h2 {
   color: var(--verde-oscuro);
   margin-top: 0;
+  text-align: center;
 }
 
 ul {
@@ -89,7 +90,7 @@ ul {
 
 .footer-bloques {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
   background-color: #ddeee2;
   padding: 40px 20px;
@@ -101,8 +102,9 @@ ul {
 }
 
 .footer-bloques .bloque {
-  flex: 1;
-  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer-bloques h4 {
