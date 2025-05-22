@@ -13,9 +13,35 @@
   </header>
 
   <nav>
-    <a href="index.html">Inicio</a>
-    <a href="quienes-somos.html">¿Quiénes somos?</a>
-    <!-- Añade aquí más enlaces si es necesario -->
+    <div class="nav-container">
+      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li class="has-submenu">
+          <a href="#">Nuestra asociación</a>
+          <ul class="submenu">
+            <li><a href="quienes-somos.html">¿Quiénes somos?</a></li>
+            <li><a href="#">Equipo humano</a></li>
+            <li><a href="#">Junta directiva</a></li>
+            <li><a href="#">Instalaciones</a></li>
+            <li><a href="#">Código ético</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu">
+          <a href="#">Servicios</a>
+          <ul class="submenu">
+            <li><a href="#">Talleres</a></li>
+            <li><a href="#">Unidad de día</a></li>
+            <li><a href="#">Usuarios</a></li>
+            <li><a href="#">Familia y cuidadores</a></li>
+            <li><a href="#">Voluntariado</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Hacerme socio</a></li>
+        <li><a href="#">Contáctanos</a></li>
+        <li><a href="#">Galería de imágenes</a></li>
+      </ul>
+    </div>
   </nav>
 
   <main>
@@ -30,27 +56,44 @@
     </section>
   </main>
 
-<footer class="footer-bloques">
-  <div class="bloque">
-    <h4>Horario</h4>
-    <p>Atención al público:<br>De 9:00 a 14:30</p>
-  </div>
-  <div class="bloque">
-    <h4>Dirección</h4>
-    <p>Avd. Salud Gutiérrez, s/n<br>Alcalá de Guadaíra (Sevilla)</p>
-  </div>
-  <div class="bloque">
-    <h4>Contacto</h4>
-    <p><a href="mailto:afeaes@hotmail.com">afeaes@hotmail.com</a><br>Tel: 955 950 821</p>
-  </div>
-  <div class="bloque bloque-siguenos">
-  <h4>Síguenos</h4>
-  <p><a href="#">Facebook</a> | <a href="#">Instagram</a></p>
-</div>
-</footer>
+  <footer>
+    <div class="footer-bloques">
+      <div class="bloque">
+        <h4>Contacto</h4>
+        <p>Email: contacto@afeaes.org</p>
+        <p>Teléfono: +34 900 123 456</p>
+      </div>
+      <div class="bloque">
+        <h4>Dirección</h4>
+        <p>Calle Esperanza, 45</p>
+        <p>28001, Madrid</p>
+      </div>
+      <div class="bloque">
+        <h4>Horario</h4>
+        <p>Lunes a Viernes</p>
+        <p>9:00 a 18:00</p>
+      </div>
+      <div class="bloque bloque-siguenos">
+        <h4>Síguenos</h4>
+        <p>
+          <a href="#">Facebook</a> |
+          <a href="#">Instagram</a>
+        </p>
+      </div>
+    </div>
+  </footer>
 
   <script>
-    // Efecto fade-in al cargar la sección
+    // Menú hamburguesa
+    const toggle = document.querySelector('.menu-toggle');
+    const links = document.querySelector('.nav-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        links.classList.toggle('show');
+      });
+    }
+
+    // Efecto fade-in
     document.addEventListener('DOMContentLoaded', () => {
       const fadeElements = document.querySelectorAll('.fade-in');
       fadeElements.forEach(el => {
