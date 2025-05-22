@@ -194,36 +194,37 @@
 </script>
   
 <script>
-  const fadeInElements = document.querySelectorAll('.fade-in');
+  function activarAnimacionesFadeIn() {
+    const elementos = document.querySelectorAll('.seccion.visible .fade-in');
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // Solo se anima una vez
-      }
-    });
-  }, { threshold: 0.1 });
+    elementos.forEach(el => {
+      // Quita la clase si ya estaba aplicada
+      el.classList.remove('visible');
 
-  // Función para reiniciar el fade-in cuando cambias de sección
-  function reobserveFadeInElements() {
-    fadeInElements.forEach(el => {
-      if (!el.classList.contains('visible')) {
-        observer.observe(el);
-      }
+      // Forzamos un reflow para reiniciar la animación
+      void el.offsetWidth;
+
+      // Añade la clase tras un pequeño retardo
+      setTimeout(() => {
+        el.classList.add('visible');
+      }, 50);
     });
   }
 
-  // Observa los elementos inicialmente
-  reobserveFadeInElements();
+  // Asumiendo que usas botones o enlaces para mostrar las secciones:
+  const enlaces = document.querySelectorAll('nav a');
 
-  // Si tienes código que cambia las secciones, llama a esta función después
-  // de mostrar una nueva sección. Por ejemplo:
-  document.querySelectorAll('nav a').forEach(enlace => {
+  enlaces.forEach(enlace => {
     enlace.addEventListener('click', () => {
-      setTimeout(reobserveFadeInElements, 200); // pequeño delay para que el DOM se actualice
+      // Esperamos a que la sección sea visible (ajusta si usas animaciones)
+      setTimeout(() => {
+        activarAnimacionesFadeIn();
+      }, 100);
     });
   });
+
+  // Activa el efecto en la sección visible al cargar la página
+  window.addEventListener('DOMContentLoaded', activarAnimacionesFadeIn);
 </script>
 
 </body>
