@@ -1,14 +1,63 @@
-<section id="quienes-somos" class="seccion">
-  <h2 class="fade-in">¿Quiénes somos?</h2>
-  <p class="fade-in">
-    AFEAES es una asociación sin ánimo de lucro formada por personas comprometidas con la mejora de la calidad de vida de los afectados por enfermedades neurodegenerativas y sus familias. Nuestro objetivo es ofrecer apoyo, información y servicios que permitan afrontar el día a día con más recursos, acompañamiento y esperanza.
-  </p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Quiénes somos? - AFEAES</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-  <p class="fade-in">
-    Nuestro equipo está formado por profesionales y voluntarios que trabajan en coordinación para desarrollar programas de atención, talleres, sensibilización y formación. Creemos firmemente en el valor de la comunidad y el acompañamiento como pilares fundamentales del bienestar.
-  </p>
+  <header>
+    <h1>¿Quiénes somos?</h1>
+  </header>
 
-  <p class="fade-in">
-    Te invitamos a conocernos más de cerca y a formar parte de nuestra red de apoyo y colaboración.
-  </p>
-</section>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="quienes-somos.html">¿Quiénes somos?</a>
+    <!-- Añade aquí más enlaces si es necesario -->
+  </nav>
+
+  <main>
+    <section class="seccion visible fade-in">
+      <h2>Conoce AFEAES</h2>
+      <p>
+        Somos una asociación dedicada a brindar apoyo, acompañamiento y servicios personalizados a personas con enfermedades mentales y sus familias. Nuestro equipo está compuesto por profesionales comprometidos con el bienestar, la inclusión y la dignidad de todos nuestros usuarios.
+      </p>
+      <p>
+        Nuestra historia comienza con la necesidad de crear un espacio humano, accesible y seguro para todas las personas que requieren asistencia psicosocial. Desde entonces, AFEAES ha crecido gracias a la colaboración de socios, voluntarios y profesionales apasionados.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-bloques">
+      <div class="bloque">
+        <h4>Contacto</h4>
+        <p>Email: contacto@afeaes.org</p>
+        <p>Teléfono: +34 900 123 456</p>
+      </div>
+      <div class="bloque">
+        <h4>Dirección</h4>
+        <p>Calle Esperanza, 45</p>
+        <p>28001, Madrid</p>
+      </div>
+      <div class="bloque">
+        <h4>Síguenos</h4>
+        <p><a href="#">Facebook</a> | <a href="#">Instagram</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Efecto fade-in al cargar la sección
+    document.addEventListener('DOMContentLoaded', () => {
+      const fadeElements = document.querySelectorAll('.fade-in');
+      fadeElements.forEach(el => {
+        el.classList.add('visible');
+      });
+    });
+  </script>
+
+</body>
+</html>
