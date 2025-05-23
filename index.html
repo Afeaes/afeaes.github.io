@@ -234,5 +234,16 @@
   window.addEventListener('DOMContentLoaded', activarAnimacionesFadeIn);
 </script>
 
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const img = document.querySelector('.fade-in-header img');
+    if (img) {
+      setTimeout(() => {
+        img.classList.add('visible');
+      }, 200);
+    }
+  });
+</script>
+  
 </body>
 </html>
