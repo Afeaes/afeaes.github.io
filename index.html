@@ -10,12 +10,9 @@
 </head>
 <body>
 
-<header class="cabecera-con-imagen fade-in-header">
-  <img src="img/cabecera.jpg" alt="Cabecera AFEAES" />
-  <div class="contenido-header">
-    <h1>AFEAES</h1>
-    <p>Asociación de Familiares de Enfermos de Alzheimer "Esperanza"</p>
-  </div>
+<header>
+  <h1>AFEAES</h1>
+  <p>Asociación de Familiares de Enfermos de Alzheimer "Esperanza"</p>
 </header>
 
 <nav>
@@ -236,11 +233,9 @@
 
 <script>
   window.addEventListener('DOMContentLoaded', () => {
-    const img = document.querySelector('.fade-in-header img');
-    if (img) {
-      setTimeout(() => {
-        img.classList.add('visible');
-      }, 200);
+    const header = document.querySelector('header');
+    if (header) {
+      header.classList.add('fade-in-bg');
     }
   });
 </script>
