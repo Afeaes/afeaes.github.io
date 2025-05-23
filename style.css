@@ -483,3 +483,27 @@ button:hover {
   opacity: 1;
   transform: translateY(0);
 }
+
+header {
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("img/cabecera.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.5); /* oscurece ligeramente para resaltar texto */
+  opacity: 0.8;
+  z-index: 0;
+}
+
+header h1,
+header p {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
