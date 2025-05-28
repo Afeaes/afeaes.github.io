@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Equipo humano - AFEAES</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Equipo humano</h1>
+  </header>
+
+  <nav>
+    <div class="nav-container">
+      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li class="has-submenu">
+          <a href="#">Nuestra asociación</a>
+          <ul class="submenu">
+            <li><a href="quienes-somos.html">¿Quiénes somos?</a></li>
+            <li><a href="equipo-humano.html">Equipo humano</a></li>
+            <li><a href="junta-directiva.html">Junta directiva</a></li>
+            <li><a href="instalaciones.html">Instalaciones</a></li>
+            <li><a href="codigo-etico.html">Código ético</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu">
+          <a href="#">Servicios</a>
+          <ul class="submenu">
+            <li><a href="talleres.html">Talleres</a></li>
+            <li><a href="unidad-dia.html">Unidad de día</a></li>
+            <li><a href="usuarios.html">Usuarios</a></li>
+            <li><a href="familia-cuidadores.html">Familia y cuidadores</a></li>
+            <li><a href="voluntariado.html">Voluntariado</a></li>
+          </ul>
+        </li>
+        <li><a href="hacerse-socio.html">Hacerme socio</a></li>
+        <li><a href="index.html#contacto">Contáctanos</a></li>
+        <li><a href="galeria.html">Galería de imágenes</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="seccion visible fade-in">
+      <h2>Nuestro equipo humano</h2>
+      <p>
+        En AFEAES contamos con un equipo multidisciplinar formado por profesionales especializados en el ámbito sociosanitario y educativo. Nuestra plantilla está compuesta por psicólogos, terapeutas ocupacionales, trabajadores sociales, auxiliares de enfermería y educadores sociales.
+      </p>
+      <p>
+        Todos ellos comparten una pasión común: mejorar la calidad de vida de las personas con enfermedades mentales y de sus familias. La formación continua, la empatía y el compromiso son pilares que definen la labor diaria de nuestro equipo.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-bloques">
+      <div class="bloque">
+        <h4>Contacto</h4>
+        <p>Email: contacto@afeaes.org</p>
+        <p>Teléfono: +34 900 123 456</p>
+      </div>
+      <div class="bloque">
+        <h4>Dirección</h4>
+        <p>Calle Esperanza, 45</p>
+        <p>28001, Madrid</p>
+      </div>
+      <div class="bloque">
+        <h4>Horario</h4>
+        <p>Lunes a Viernes</p>
+        <p>9:00 a 18:00</p>
+      </div>
+      <div class="bloque bloque-siguenos">
+        <h4>Síguenos</h4>
+        <p>
+          <a href="#">Facebook</a> |
+          <a href="#">Instagram</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const links = document.querySelector('.nav-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        links.classList.toggle('show');
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const fadeElements = document.querySelectorAll('.fade-in');
+      fadeElements.forEach(el => {
+        el.classList.add('visible');
+      });
+    });
+  </script>
+
+</body>
+</html>
