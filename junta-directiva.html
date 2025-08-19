@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Importa la fuente Nunito desde Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AFEAES - Asociación</title>
+  <title>AFEAES</title>
 
-  <!-- Aplica la fuente Nunito en todo el documento-->
-  <style>body { font-family: 'Nunito', sans-serif; }</style>
-
-  <!-- Tu hoja de estilos principal -->
+  <!-- Fuente y estilos -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <style>body { font-family: 'Nunito', sans-serif; }</style>
 </head>
 <body>
 
@@ -25,9 +22,9 @@
   <div class="nav-container">
     <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
     <ul class="nav-links">
-      <li><a href="index.html#inicio">Inicio</a></li>
+      <li><a href="index.html">Inicio</a></li>
       <li class="has-submenu">
-        <a href="index.html#nuestra-asociacion">Nuestra asociación</a>
+        <a href="nuestra-asociacion.html">Nuestra asociación</a>
         <ul class="submenu">
           <li><a href="quienes-somos.html">Quiénes somos</a></li>
           <li><a href="equipo-humano.html">Equipo humano</a></li>
@@ -37,7 +34,7 @@
         </ul>
       </li>
       <li class="has-submenu">
-        <a href="index.html#servicios">Servicios</a>
+        <a href="servicios.html">Servicios</a>
         <ul class="submenu">
           <li><a href="talleres.html">Talleres</a></li>
           <li><a href="unidad-dia.html">Unidad de día</a></li>
@@ -46,106 +43,16 @@
           <li><a href="voluntariado.html">Voluntariado</a></li>
         </ul>
       </li>
-      <li class="has-submenu">
-        <a href="index.html#socios">Socios</a>
-        <ul class="submenu">
-          <li><a href="servicios-socios.html">Servicios</a></li>
-          <li><a href="beneficios.html">Beneficios</a></li>
-          <li><a href="hazte-socio.html">Hacerme socio</a></li>
-        </ul>
-      </li>
-      <li><a href="index.html#contacto">Contáctanos</a></li>
-      <li><a href="index.html#galeria">Galería</a></li>
+      <li><a href="socios.html">Socios</a></li>
+      <li><a href="contacto.html">Contáctanos</a></li>
+      <li><a href="galeria.html">Galería</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- Sección principal: Inicio -->
-<section id="inicio" class="seccion visible">
-  <h2 class="titulo-bienvenida fade-in">Te damos la bienvenida a AFEAES</h2>
-  <p class= "fade-in">Te acompañamos en tu camino hacia el bienestar social, físico y cognitivo.</p>
-
-  <div class="inicio-bloques fade-in">
-    <div class="bloque-ayuda">
-      <h3>¿Necesitas nuestra ayuda?</h3>
-      <div class="galeria-inicio">
-        <a href="unidad-dia.html" class="tarjeta-inicio">
-          <div class="imagen-placeholder"></div>
-          <p>Unidad de día</p>
-        </a>
-        <a href="talleres.html" class="tarjeta-inicio">
-          <div class="imagen-placeholder"></div>
-          <p>Asistencia a talleres</p>
-        </a>
-      </div>
-      <div class="boton-inicio-accion">
-        <a href="#contacto">Contáctanos</a>
-      </div>
-    </div>
-
-    <div class="bloque-socios">
-      <h3>¿Quieres ayudar?</h3>
-      <div class="galeria-inicio">
-        <a href="#socios" class="tarjeta-inicio">
-          <div class="imagen-placeholder"></div>
-          <p>Socios</p>
-        </a>
-      </div>
-      <div class="boton-inicio-accion">
-        <a href="hazte-socio.html">Hazte socio</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Sección: Nuestra asociación -->
-<section id="nuestra-asociacion" class="seccion">
-  <h2>Nuestra asociación</h2>
-  <p>Descubre todo lo que somos y hacemos. Selecciona un apartado para saber más.</p>
-  <div class="galeria-asociacion">
-    <a href="quienes-somos.html" class="tarjeta"><h3>Quiénes somos</h3></a>
-    <a href="equipo-humano.html" class="tarjeta"><h3>Equipo humano</h3></a>
-    <a href="junta-directiva.html" class="tarjeta"><h3>Junta directiva</h3></a>
-    <a href="instalaciones.html" class="tarjeta"><h3>Instalaciones</h3></a>
-    <a href="codigo-etico.html" class="tarjeta"><h3>Código ético</h3></a>
-  </div>
-</section>
-
-<!-- Sección: Socios -->
-<section id="socios" class="seccion">
-  <h2>Socios</h2>
-  <p>Consulta los servicios disponibles, beneficios y cómo hacerte socio.</p>
-  <div class="galeria-asociacion">
-    <a href="servicios-socios.html" class="tarjeta"><h3>Servicios</h3></a>
-    <a href="beneficios.html" class="tarjeta"><h3>Beneficios</h3></a>
-    <a href="hazte-socio.html" class="tarjeta"><h3>Hacerme socio</h3></a>
-  </div>
-</section>
-
-<section id="contacto" class="seccion">
-  <h2>Contáctanos</h2>
-  <p>¿Tienes dudas o sugerencias? Escríbenos:</p>
-  <form action="https://formsubmit.co/afeaes@hotmail.com" method="POST">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="name" required>
-
-    <label for="email">Correo electrónico:</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="mensaje">Mensaje:</label>
-    <textarea id="mensaje" name="message" rows="5" required></textarea>
-
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://afeaes.github.io/gracias.html">
-
-    <button type="submit">Enviar</button>
-  </form>
-</section>
-
-<section id="galeria" class="seccion">
-  <h2>Galería</h2>
-  <p>Próximamente podrás ver aquí imágenes de nuestras actividades y eventos.</p>
-</section>
+<main>
+  <!-- Aquí va el contenido específico de cada página -->
+</main>
 
 <footer class="footer-bloques">
   <div class="bloque">
@@ -161,21 +68,20 @@
     <p><a href="mailto:afeaes@hotmail.com">afeaes@hotmail.com</a><br>Tel: 955 950 821</p>
   </div>
   <div class="bloque bloque-siguenos">
-  <h4>Síguenos</h4>
-  <p><a href="#">Facebook</a> | <a href="#">Instagram</a></p>
-</div>
+    <h4>Síguenos</h4>
+    <p><a href="#">Facebook</a> | <a href="#">Instagram</a></p>
+  </div>
 </footer>
 
 <script>
+  // Menú hamburguesa
   const toggleBtn = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
 
-  // Abrir/cerrar menú al hacer clic en el botón hamburguesa
   toggleBtn.addEventListener('click', () => {
     navLinks.classList.toggle('show');
   });
 
-  // Cerrar menú al hacer clic en un enlace del menú (solo si está abierto)
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
       if (navLinks.classList.contains('show')) {
@@ -183,68 +89,7 @@
       }
     });
   });
-
-  // Mostrar solo la sección correspondiente al hash
-  const secciones = document.querySelectorAll('.seccion');
-
-  function mostrarSeccion() {
-    const hash = window.location.hash || '#inicio';
-    secciones.forEach(sec => {
-      sec.classList.toggle('visible', '#' + sec.id === hash);
-    });
-  }
-
-  window.addEventListener('load', mostrarSeccion);
-  window.addEventListener('hashchange', mostrarSeccion);
-</script>
-  
-<script>
-  window.addEventListener('load', mostrarSeccion);
-  window.addEventListener('hashchange', mostrarSeccion);
-</script>
-  
-<script>
-  function activarAnimacionesFadeIn() {
-    const elementos = document.querySelectorAll('.seccion.visible .fade-in');
-
-    elementos.forEach(el => {
-      // Quita la clase si ya estaba aplicada
-      el.classList.remove('visible');
-
-      // Forzamos un reflow para reiniciar la animación
-      void el.offsetWidth;
-
-      // Añade la clase tras un pequeño retardo
-      setTimeout(() => {
-        el.classList.add('visible');
-      }, 50);
-    });
-  }
-
-  // Asumiendo que usas botones o enlaces para mostrar las secciones:
-  const enlaces = document.querySelectorAll('nav a');
-
-  enlaces.forEach(enlace => {
-    enlace.addEventListener('click', () => {
-      // Esperamos a que la sección sea visible (ajusta si usas animaciones)
-      setTimeout(() => {
-        activarAnimacionesFadeIn();
-      }, 100);
-    });
-  });
-
-  // Activa el efecto en la sección visible al cargar la página
-  window.addEventListener('DOMContentLoaded', activarAnimacionesFadeIn);
 </script>
 
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    const header = document.querySelector('header');
-    if (header) {
-      header.classList.add('fade-in-bg');
-    }
-  });
-</script>
-  
 </body>
 </html>
