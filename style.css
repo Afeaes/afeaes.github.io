@@ -1,4 +1,5 @@
-
+/* Importamos la fuente al CSS */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 :root {
   --verde-claro: #f1f9f4;
   --verde-pastel: #a9d6b2;
@@ -16,6 +17,10 @@ body {
   font-family: 'Nunito', sans-serif;
   background-color: var(--verde-claro);
   color: var(--texto);
+}
+
+html, body, p, h1, h2, h3, h4, h5, h6, a, li {
+  font-family: 'Nunito', sans-serif;
 }
 
 header {
