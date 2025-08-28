@@ -572,3 +572,15 @@ header p {
 .bienvenida + .inicio-bloques {
   margin-top: 30px;
 }
+
+/* Blindamos los párrafos de bienvenida */
+#inicio .bienvenida-texto,
+#inicio .bienvenida-texto p {
+    max-width: 72ch !important;
+    margin: 0 auto !important;
+    color: var(--texto) !important;
+    line-height: 1.7 !important;
+    font-size: 1rem !important;
+    text-align: justify !important;
+    font-family: 'Nunito', sans-serif !important;
+}
