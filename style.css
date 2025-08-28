@@ -526,3 +526,48 @@ header p {
   z-index: 1;
   color: white;
 }
+
+/* --- BLOQUE DE BIENVENIDA --- */
+.bienvenida {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.bienvenida h2 {
+  margin: 0 0 10px 0;
+  font-size: clamp(1.6rem, 2.2vw + 1rem, 2.4rem);
+  color: var(--verde-oscuro);
+  line-height: 1.2;
+}
+
+.bienvenida .marca {
+  color: var(--verde-oscuro);
+  font-weight: 800;
+}
+
+.bienvenida .subtitulo {
+  font-size: clamp(1rem, 0.4vw + 1rem, 1.2rem);
+  color: var(--texto);
+  opacity: 0.95;
+  margin-bottom: 15px;
+}
+
+.bienvenida-texto {
+  max-width: 72ch;
+  margin: 0 auto;
+  color: var(--texto);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.bienvenida strong {
+  color: var(--verde-oscuro);
+  font-weight: 700;
+}
+
+/* --- SEPARACIÓN VISUAL ANTES DE LOS BLOQUES DE INICIO --- */
+.bienvenida + .inicio-bloques {
+  margin-top: 30px;
+}
