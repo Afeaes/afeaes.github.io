@@ -560,6 +560,7 @@ header p {
   color: var(--texto);
   line-height: 1.7;
   font-size: 1rem;
+  text-align: justify;
 }
 
 .bienvenida strong {
