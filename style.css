@@ -546,7 +546,7 @@ header p {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.inicio-titulo-card:hover {
+.titulo-principal:hover {
   transform: scale(1.02);
   box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 }
