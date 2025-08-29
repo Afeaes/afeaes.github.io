@@ -615,9 +615,3 @@ header p {
   color: #222;
   border-bottom: 8px solid #ff7a00; /* Banda inferior naranja */
 }
-
-/* Destacar AFEAES */
-.titulo-principal.opcion1 span {
-  color: white;
-  font-weight: bold;
-}
