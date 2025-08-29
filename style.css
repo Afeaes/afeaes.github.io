@@ -528,50 +528,72 @@ header p {
 }
 
 /* --- BLOQUE DE BIENVENIDA --- */
-.bienvenida {
-  padding: 3rem 1rem;
-  background-color: #f9fbf8;
+.inicio-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
   text-align: center;
 }
 
-.bienvenida-contenedor {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.bienvenida-titulo {
-  font-size: 2rem;
-  color: #2c5938;
-  margin-bottom: 0.5rem;
-}
-
-.bienvenida-titulo span {
-  color: #3ca86b;
-}
-
-.bienvenida-subtitulo {
-  font-size: 1.2rem;
-  color: #4f6f5f;
-  margin-bottom: 2rem;
-}
-
-.bienvenida-tarjetas {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: 1fr 1fr;
-}
-
-.tarjeta {
-  background-color: #ffffff;
-  padding: 1.5rem;
+/* Tarjeta destacada para el título */
+.inicio-titulo-card {
+  background-color: #6FBF73; /* Verde pastel intenso */
+  color: #fff;
+  padding: 1.2rem 1.5rem;
   border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  text-align: justify;
-  line-height: 1.7;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  margin-bottom: 1.5rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.inicio-titulo-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.inicio-titulo-card span {
+  color: #ff7e47; /* Naranja corporativo */
+}
+
+/* Subtítulo plano pero con acentos */
+.inicio-subtitulo {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.inicio-subtitulo .resaltado {
+  color: #ff7e47;
+  font-weight: bold;
+}
+
+/* Contenedor de tarjetas */
+.inicio-tarjetas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* Tarjetas */
+.tarjeta {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: justify;
+}
+
 .tarjeta:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+  transform: scale(1.03) translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.tarjeta-verde {
+  background-color: #e9f8ef; /* Verde muy suave */
+  border-top: 5px solid #6FBF73;
+}
+
+.tarjeta-blanca {
+  background-color: #fff;
+  border-top: 5px solid #ff7e47; /* Barra naranja */
 }
