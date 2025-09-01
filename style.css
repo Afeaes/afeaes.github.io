@@ -615,7 +615,7 @@ header p {
   color: #ffffff;
   border-bottom: 8px solid #ff7a00; /* Banda inferior naranja */
 
-  font-size: 1,5 rem; /* Aumentamos el tamaño */
+  font-size: 1.5rem; /* Aumentamos el tamaño */
   font-weight: 700; /* Más grosor para destacar */
   text-transform: uppercase;
   letter-spacing: 1.5px;
