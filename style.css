@@ -612,6 +612,6 @@ header p {
 /* Opción 1 — Banda inferior naranja */
 .titulo-principal.opcion1 {
   background-color: #a9d6b2; /* Verde corporativo */
-  color: #222;
+  color: #ffffff;
   border-bottom: 8px solid #ff7a00; /* Banda inferior naranja */
 }
