@@ -608,4 +608,62 @@ header p {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* ---- CONTENEDOR GENÉRICO DE GALERÍA ------------------------------------------------------------------------------------------------------------- */
+.grid-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px; /* Espaciado entre elementos */
+  margin: 30px auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 15px; /* Un poco de aire lateral */
+}
 
+/* ---- TARJETA DE LA GALERÍA ---- */
+.grid-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Efecto hover sutil y elegante */
+.grid-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ---- IMÁGENES DENTRO DE LA TARJETA ---- */
+.grid-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.grid-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ---- CONTENIDO DENTRO DE LA TARJETA ---- */
+.grid-card-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.grid-card-content h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.grid-card-content p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.4;
+}
