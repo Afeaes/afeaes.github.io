@@ -614,4 +614,12 @@ header p {
   background-color: #a9d6b2; /* Verde corporativo */
   color: #ffffff;
   border-bottom: 8px solid #ff7a00; /* Banda inferior naranja */
+
+  font-size: 2.4rem; /* Aumentamos el tamaño */
+  font-weight: 800; /* Más grosor para destacar */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-decoration: underline; /* Subrayado elegante */
+  text-decoration-thickness: 3px; /* Grosor del subrayado */
+  text-underline-offset: 6px; /* Separación entre texto y subrayado */
 }
