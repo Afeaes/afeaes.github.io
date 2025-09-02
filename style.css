@@ -609,61 +609,100 @@ header p {
 }
 
 /* ---- CONTENEDOR GENÉRICO DE GALERÍA ------------------------------------------------------------------------------------------------------------- */
-.grid-gallery {
+.grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px; /* Espaciado entre elementos */
-  margin: 30px auto;
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 15px; /* Un poco de aire lateral */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  padding: 20px 0;
+  margin-top: 20px;
+  justify-items: center; /* centra las tarjetas horizontalmente */
 }
 
-/* ---- TARJETA DE LA GALERÍA ---- */
-.grid-card {
+/* ==== TARJETA GENÉRICA ==== */
+.tarjeta {
   background: #fff;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;
+  padding: 20px;
+  max-width: 360px;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-/* Efecto hover sutil y elegante */
-.grid-card:hover {
+/* ==== HOVER TARJETA ==== */
+.tarjeta:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* ---- IMÁGENES DENTRO DE LA TARJETA ---- */
-.grid-card img {
-  width: 100%;
-  height: 180px;
+/* ==== IMAGEN OPCIONAL ==== */
+.tarjeta img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 15px;
   object-fit: cover;
-  transition: transform 0.3s ease;
 }
 
-.grid-card:hover img {
-  transform: scale(1.05);
+/* ==== TÍTULO TARJETA ==== */
+.tarjeta h3 {
+  font-size: 1.3rem;
+  margin: 8px 0 10px;
+  color: #2d6a4f; /* verde elegante para títulos */
 }
 
-/* ---- CONTENIDO DENTRO DE LA TARJETA ---- */
-.grid-card-content {
-  padding: 15px;
-  text-align: center;
+/* ==== TEXTO TARJETA ==== */
+.tarjeta p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0 0 15px;
+  line-height: 1.5;
 }
 
-.grid-card-content h3 {
-  font-size: 1.2rem;
-  color: #333;
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-.grid-card-content p {
+/* ==== BOTÓN OPCIONAL ==== */
+.tarjeta .btn {
+  display: inline-block;
+  background-color: #2d6a4f;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
   font-size: 0.95rem;
-  color: #666;
-  line-height: 1.4;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.25s ease;
+}
+
+.tarjeta .btn:hover {
+  background-color: #1b4332;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .tarjeta {
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  .tarjeta h3 {
+    font-size: 1.15rem;
+  }
+
+  .tarjeta p {
+    font-size: 0.95rem;
+  }
 }
