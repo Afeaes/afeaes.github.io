@@ -615,94 +615,65 @@ header p {
   gap: 24px;
   padding: 20px 0;
   margin-top: 20px;
-  justify-items: center; /* centra las tarjetas horizontalmente */
+  justify-items: center;
 }
 
-/* ==== TARJETA GENÉRICA ==== */
 .tarjeta {
-  background: #fff;
+  position: relative;
+  width: 260px;
+  aspect-ratio: 1 / 1; /* cuadrada */
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;
-  padding: 20px;
-  max-width: 360px;
-  width: 100%;
-  text-align: center;
-  text-decoration: none;
-  color: inherit;
-
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-weight: bold;
 }
 
-/* ==== HOVER TARJETA ==== */
+/* IMAGEN COMO FONDO DE TARJETA */
+.tarjeta img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(3px) brightness(0.6);
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+/* AL PASAR EL CURSOR, NÍTIDA */
+.tarjeta:hover img {
+  filter: blur(0) brightness(1);
+  transform: scale(1.05);
+}
+
+/* TEXTO SOBRE LA IMAGEN */
+.tarjeta h3 {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding: 10px;
+  font-size: 1.3rem;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+/* HOVER TARJETA */
 .tarjeta:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* ==== IMAGEN OPCIONAL ==== */
-.tarjeta img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  margin-bottom: 15px;
-  object-fit: cover;
-}
-
-/* ==== TÍTULO TARJETA ==== */
-.tarjeta h3 {
-  font-size: 1.3rem;
-  margin: 8px 0 10px;
-  color: #2d6a4f; /* verde elegante para títulos */
-}
-
-/* ==== TEXTO TARJETA ==== */
-.tarjeta p {
-  font-size: 1rem;
-  color: #555;
-  margin: 0 0 15px;
-  line-height: 1.5;
-}
-
-/* ==== BOTÓN OPCIONAL ==== */
-.tarjeta .btn {
-  display: inline-block;
-  background-color: #2d6a4f;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background-color 0.25s ease;
-}
-
-.tarjeta .btn:hover {
-  background-color: #1b4332;
-}
-
-/* ==== RESPONSIVE ==== */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-  }
-
   .tarjeta {
-    max-width: 100%;
-    padding: 16px;
-  }
-
-  .tarjeta h3 {
-    font-size: 1.15rem;
-  }
-
-  .tarjeta p {
-    font-size: 0.95rem;
+    width: 100%;
+    aspect-ratio: auto;
+    min-height: 220px;
   }
 }
