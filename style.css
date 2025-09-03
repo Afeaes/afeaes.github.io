@@ -620,7 +620,7 @@ header p {
 
 .tarjeta {
   position: relative;
-  width: 260px;
+  width: 200px;
   aspect-ratio: 1 / 1; /* cuadrada */
   border-radius: 16px;
   overflow: hidden;
