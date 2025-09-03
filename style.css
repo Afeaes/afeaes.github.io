@@ -611,12 +611,11 @@ header p {
 /* ---- CONTENEDOR GENÉRICO DE GALERÍA ------------------------------------------------------------------------------------------------------------- */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px));
   gap: 24px;
   padding: 20px 0;
   margin-top: 20px;
   justify-content: center;
-  justify-items: center;
 }
 
 .tarjeta {
