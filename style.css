@@ -611,7 +611,7 @@ header p {
 /* ---- CONTENEDOR GENÉRICO DE GALERÍA ------------------------------------------------------------------------------------------------------------- */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 24px;
   padding: 20px 0;
   margin-top: 20px;
