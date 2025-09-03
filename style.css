@@ -610,31 +610,29 @@ header p {
 
 /* ---- CONTENEDOR GENÉRICO DE GALERÍA ------------------------------------------------------------------------------------------------------------- */
 .grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 200px);
-  gap: 30px;
-  padding: 20px 0;
-  margin-top: 20px;
-  justify-content: center;
-  justify-items: center;
-  box-sizing: border-box;
-}
-
-.tarjeta-galeria {
-  position: relative;
-  width: 200px;
-  aspect-ratio: 1 / 1; /* cuadrada */
-  border-radius: 16px;
-  overflow: hidden;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  font-weight: bold;
+  display: flex; 
+  flex-wrap: wrap; /* Permite varias filas */ 
+  justify-content: center; /* Centra los elementos de cada fila */ 
+  gap: 30px; /* Separación entre tarjetas */ 
+  padding: 20px 0; 
+  margin-top: 20px; 
+  box-sizing: border-box; 
+} 
+.grid-container .tarjeta-galeria { 
+  flex: 0 0 200px; /* Tamaño fijo de cada tarjeta */ 
+  display: flex; 
+  align-items: flex-end; 
+  justify-content: center; 
+  position: relative; 
+  border-radius: 16px; 
+  overflow: hidden; 
+  cursor: pointer; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12); 
+  transition: transform 0.25s ease, 
+  box-shadow 0.25s ease; 
+  text-align: center; 
+  color: white; 
+  font-weight: bold; 
 }
 
 /* IMAGEN COMO FONDO DE TARJETA */
