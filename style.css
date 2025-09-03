@@ -619,7 +619,7 @@ header p {
   justify-items: center;
 }
 
-.tarjeta {
+.tarjeta-galeria {
   position: relative;
   width: 200px;
   aspect-ratio: 1 / 1; /* cuadrada */
@@ -637,7 +637,7 @@ header p {
 }
 
 /* IMAGEN COMO FONDO DE TARJETA */
-.tarjeta img {
+.tarjeta-galeria img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -648,13 +648,13 @@ header p {
 }
 
 /* AL PASAR EL CURSOR, NÍTIDA */
-.tarjeta:hover img {
+.tarjeta-galeria:hover img {
   filter: blur(0) brightness(1);
   transform: scale(1.05);
 }
 
 /* TEXTO SOBRE LA IMAGEN */
-.tarjeta h3 {
+.tarjeta-galeria h3 {
   position: relative;
   z-index: 2;
   margin: 0;
@@ -665,14 +665,14 @@ header p {
 }
 
 /* HOVER TARJETA */
-.tarjeta:hover {
+.tarjeta-galeria:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  .tarjeta {
+  .tarjeta-galeria {
     width: 100%;
     aspect-ratio: auto;
     min-height: 220px;
