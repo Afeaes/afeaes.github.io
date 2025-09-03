@@ -612,7 +612,7 @@ header p {
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, 200px);
-  gap: 24px;
+  gap: 30px;
   padding: 20px 0;
   margin-top: 20px;
   justify-content: center;
