@@ -619,7 +619,9 @@ header p {
   box-sizing: border-box; 
 } 
 .grid-container .tarjeta-galeria { 
-  flex: 0 0 200px; /* Tamaño fijo de cada tarjeta */ 
+  flex: 0 0 200px; /* Tamaño fijo de cada tarjeta */
+  width: 200px;
+  aspect-ratio: 1 / 1;
   display: flex; 
   align-items: flex-end; 
   justify-content: center; 
