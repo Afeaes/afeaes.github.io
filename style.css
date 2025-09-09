@@ -162,25 +162,31 @@ ul {
   }
 }
 
+/* ==== SECCIÓN DE INICIO ==== */
 #inicio {
-  background: transparent;
-  box-shadow: none;
-  padding: 0;
-}
-#inicio {
-  background: 
+  /* Imagen de fondo con oscurecimiento para contraste del texto */
+  background:
     linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
     url("img/fondo-inicio.jpg") center/cover no-repeat;
+  
+  /* Ajustes generales */
   color: white;
-  padding: 120px 20px;
   text-align: center;
+  padding: 120px 20px;
+  box-shadow: none;       /* Sin caja blanca */
+  border-radius: 0;       /* Bordes cuadrados */
+  max-width: 100%;        /* Que ocupe todo el ancho */
+  margin: 0;
 }
+
+/* TITULAR PRINCIPAL */
 #inicio h1 {
   font-size: 2.8rem;
   font-weight: bold;
   margin-bottom: 15px;
 }
 
+/* PÁRRAFO PRINCIPAL */
 #inicio p {
   font-size: 1.2rem;
   max-width: 600px;
@@ -188,6 +194,7 @@ ul {
   line-height: 1.6;
 }
 
+/* BOTÓN PRINCIPAL */
 #inicio .btn-principal {
   display: inline-block;
   padding: 12px 28px;
@@ -199,6 +206,7 @@ ul {
   transition: background-color 0.3s ease;
 }
 
+/* EFECTO HOVER DEL BOTÓN */
 #inicio .btn-principal:hover {
   background-color: #1b4332;
 }
