@@ -162,6 +162,12 @@ ul {
   }
 }
 
+#inicio {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
 .botones-inicio {
   display: flex;
   justify-content: space-between;
