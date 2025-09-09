@@ -167,6 +167,41 @@ ul {
   box-shadow: none;
   padding: 0;
 }
+#inicio {
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("img/fondo-inicio.jpg") center/cover no-repeat;
+  color: white;
+  padding: 120px 20px;
+  text-align: center;
+}
+#inicio h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+#inicio p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 25px;
+  line-height: 1.6;
+}
+
+#inicio .btn-principal {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #2d6a4f;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#inicio .btn-principal:hover {
+  background-color: #1b4332;
+}
 
 .botones-inicio {
   display: flex;
