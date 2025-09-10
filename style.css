@@ -164,12 +164,10 @@ ul {
 /* ==== SECCIÓN DE INICIO ==== */
 #inicio {
   /* Imagen de fondo con oscurecimiento para contraste del texto */
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url("img/fondo-inicio.jpg") center/cover no-repeat;
+  background-color: #fdfcf8;
   
   /* Ajustes generales */
-  color: white;
+  color: #333;
   text-align: center;
   padding: 120px 20px;
   box-shadow: none;       /* Sin caja blanca */
