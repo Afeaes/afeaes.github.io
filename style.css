@@ -642,9 +642,9 @@ header p {
   border-top: 5px solid #ff7e47; /* Barra naranja */
   width: calc(100% - 40px); /* Ocupa todo el ancho menos 20px de margen a cada lado */
   max-width: 1000px; /* No crecerá más de 700px */
-  margin: 20px auto; /* Centra horizontalmente */
+  margin: 5px auto; /* Centra horizontalmente */
   padding: 0px; /* Espaciado interno */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra suave para estética */
+  
   border-radius: 12px; /* Bordes redondeados */
   box-sizing: border-box;
 }
