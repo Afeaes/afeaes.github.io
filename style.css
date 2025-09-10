@@ -643,7 +643,7 @@ header p {
   width: calc(100% - 40px); /* Ocupa todo el ancho menos 20px de margen a cada lado */
   max-width: 1000px; /* No crecerá más de 700px */
   margin: 5px auto; /* Centra horizontalmente */
-  padding: 50px; /* Espaciado interno */
+  padding: 50px 0px 0px; /* Espaciado interno */
   
   border-radius: 12px; /* Bordes redondeados */
   box-sizing: border-box;
