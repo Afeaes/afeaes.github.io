@@ -164,7 +164,7 @@ ul {
 /* ==== SECCIÓN DE INICIO ==== */
 #inicio {
   /* Imagen de fondo con oscurecimiento para contraste del texto */
-  background-color: #fdfcf8;
+  background-color: var(--verde-claro);
   
   /* Ajustes generales */
   color: #333;
