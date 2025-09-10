@@ -584,7 +584,7 @@ header p {
 .titulo-principal.opcion1 {
   background-color: #a9d6b2; /* Verde corporativo */
   color: #ffffff;
-  border-bottom: 8px solid #ff7a00; /* Banda inferior naranja */
+  border-bottom: 8px solid #ff7e47; /* Banda inferior naranja */
   font-size: 1.2rem; /* Aumentamos el tamaño */
   font-weight: 700; /* Más grosor para destacar */
   text-transform: uppercase;
@@ -640,6 +640,7 @@ header p {
 .tarjeta-blanca {
   background-color: #fff;
   border-top: 5px solid #ff7e47; /* Barra naranja */
+  max-width: 700px;
 }
 
 /* Contenedor del título */
