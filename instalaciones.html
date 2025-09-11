@@ -56,20 +56,43 @@
     </ul>
   </div>
 </nav>
-<main>
-  <div class="slider">
-  <div class="slides">
-    <img src="img/gimnasio1.jpg" alt="Foto 1">
-    <img src="img/gimnasio2.jpg" alt="Foto 2">
-    <img src="img/gimnasio3.jpg" alt="Foto 3">
-    <img src="img/gimnasio4.jpg" alt="Foto 4">
-    <img src="img/gimnasio5.jpg" alt="Foto 5">
-    <img src="img/gimnasio6.jpg" alt="Foto 6">
-  </div>
 
-  <!-- Botones -->
-  <button class="prev" onclick="moverSlide(-1)">&#10094;</button>
-  <button class="next" onclick="moverSlide(1)">&#10095;</button>
+<main>
+
+<!-- Galería 1 -->
+<div class="galeria-bloque">
+  <div class="slider">
+    <div class="slides">
+      <img src="img/foto1.jpg" alt="">
+      <img src="img/foto2.jpg" alt="">
+      <img src="img/foto3.jpg" alt="">
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+    <div class="dots"></div>
+  </div>
+  <div class="texto">
+    <h2>Título de la galería</h2>
+    <p>Descripción breve de lo que se muestra en esta galería. Puede ser un texto atractivo y explicativo.</p>
+  </div>
+</div>
+
+<!-- Galería 2 -->
+<div class="galeria-bloque">
+  <div class="slider">
+    <div class="slides">
+      <img src="img/foto4.jpg" alt="">
+      <img src="img/foto5.jpg" alt="">
+      <img src="img/foto6.jpg" alt="">
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+    <div class="dots"></div>
+  </div>
+  <div class="texto">
+    <h2>Otra galería</h2>
+    <p>Esta galería está al otro lado para dar dinamismo y una visión más moderna al diseño.</p>
+  </div>
 </div>
   
   
@@ -115,21 +138,39 @@
 </script>
 
 <script>
-let index = 0;
-const slides = document.querySelector('.slides');
-const total = slides.children.length;
+document.querySelectorAll('.slider').forEach((slider) => {
+  let index = 0;
+  const slides = slider.querySelector('.slides');
+  const total = slides.children.length;
+  const dotsContainer = slider.querySelector('.dots');
 
-function mostrarSlide(i) {
-  index = (i + total) % total; // bucle infinito
-  slides.style.transform = `translateX(-${index * 100}%)`;
-}
+  // Crear puntos
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement('span');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => mostrarSlide(i));
+    dotsContainer.appendChild(dot);
+  }
 
-function moverSlide(n) {
-  mostrarSlide(index + n);
-}
+  const dots = dotsContainer.querySelectorAll('span');
 
-// Pase automático cada 4 segundos
-setInterval(() => moverSlide(1), 4000);
+  function mostrarSlide(i) {
+    index = (i + total) % total;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach(d => d.classList.remove('active'));
+    dots[index].classList.add('active');
+  }
+
+  function moverSlide(n) {
+    mostrarSlide(index + n);
+  }
+
+  slider.querySelector('.prev').addEventListener('click', () => moverSlide(-1));
+  slider.querySelector('.next').addEventListener('click', () => moverSlide(1));
+
+  // Pase automático
+  setInterval(() => moverSlide(1), 5000);
+});
 </script>
   
 </body>
