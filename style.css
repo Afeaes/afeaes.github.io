@@ -729,14 +729,29 @@ header p {
   }
 }
 
-/*===================GALERIAS===================*/
+/* ======= BLOQUES DE GALERÍA ======= */
+.galeria-bloque {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+  gap: 40px;
+}
+
+/* Alternar orden en bloques pares */
+.galeria-bloque:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* ======= SLIDER ======= */
 .slider {
   position: relative;
-  max-width: 800px;
-  margin: auto;
+  width: 350px;
+  height: 220px;
   overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  background: #fff;
 }
 
 .slides {
@@ -745,11 +760,14 @@ header p {
 }
 
 .slides img {
-  width: 100%;
+  width: 350px;
+  height: 220px;
+  object-fit: cover;
   flex-shrink: 0;
+  border-radius: 16px;
 }
 
-/* Botones */
+/* ======= BOTONES ======= */
 .prev, .next {
   position: absolute;
   top: 50%;
@@ -757,10 +775,51 @@ header p {
   background-color: rgba(0,0,0,0.4);
   color: white;
   border: none;
-  padding: 10px;
+  padding: 8px 12px;
   cursor: pointer;
   border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.prev:hover, .next:hover {
+  background: rgba(0,0,0,0.6);
 }
 
 .prev { left: 10px; }
 .next { right: 10px; }
+
+/* ======= INDICADORES ======= */
+.dots {
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.dots span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dots .active {
+  background: #ff7e47;
+}
+
+/* ======= TEXTO LATERAL ======= */
+.texto {
+  max-width: 300px;
+}
+
+.texto h2 {
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.texto p {
+  color: #666;
+}
