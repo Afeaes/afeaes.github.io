@@ -10,6 +10,7 @@
   --texto: #2f2f2f;
   --sombra: rgba(0, 0, 0, 0.05);
   --blanco: #ffffff;
+  --accent: #f4a261; /* color naranja; cámbialo por #ff7e47 si lo prefieres */
 }
 
 body {
@@ -729,68 +730,139 @@ header p {
   }
 }
 
-/* Estilos generales de la galería */
+
+/* ======= CONTENEDOR / SLIDER (aliases para dos convenciones) ======= */
+.slider,
 .galeria-container {
   position: relative;
-  width: 450px;   /* tamaño reducido */
-  height: 300px;
-  margin: 20px;
+  width: 100%;
+  max-width: 450px;    /* ancho máximo de la galería (ajusta si quieres más pequeña) */
+  height: 260px;       /* altura fija; cambia si quieres otra proporción */
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  background: #fff;
 }
 
+/* ======= FILA DE SLIDES ======= */
+.slides {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Si tu markup usó .galeria-slide por slide, que no interfiera (alias) */
 .galeria-slide {
-  display: none;
+  display: block; /* evita que queden ocultas si antes pusiste display:none por error */
   width: 100%;
   height: 100%;
 }
 
+.slides img,
 .galeria-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  flex-shrink: 0;
+  display: block;
+  border-radius: 12px;
 }
 
-/* Flechas de navegación */
-.galeria-prev,
-.galeria-next {
+/* ======= FLECHAS (aliases para .prev/.next y .galeria-prev/.galeria-next) ======= */
+.prev, .next,
+.galeria-prev, .galeria-next {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%); /* centradas verticalmente */
   color: white;
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 22px;
+  line-height: 1;
   padding: 10px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0,0,0,0.35);
+  border: none;
   cursor: pointer;
   user-select: none;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.25s ease, color 0.25s ease;
+  /* NO hay transición que mueva la posición */
 }
 
-.galeria-prev {
-  left: 10px;
+/* posición izquierda/derecha para ambos nombres */
+.prev, .galeria-prev { left: 10px; }
+.next, .galeria-next { right: 10px; }
+
+/* Hover: solo cambio de color a naranja (sin mover) */
+.prev:hover, .next:hover,
+.galeria-prev:hover, .galeria-next:hover {
+  background: var(--accent);
+  color: #fff;
 }
 
-.galeria-next {
-  right: 10px;
-}
-
-/* Efecto hover: naranja */
-.galeria-prev:hover,
-.galeria-next:hover {
-  background: #f4a261;  /* naranja cálido */
-  color: white;
-}
-
-/* Título decorativo */
-.galeria-titulo {
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 10px;
+/* ======= INDICADORES (puntos) ======= */
+.dots {
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
   text-align: center;
-  background: rgba(255, 255, 255, 0.8);
-  color: #f4a261; /* título en naranja */
-  border-bottom: 2px solid #f4a261;
+  pointer-events: auto;
+}
+
+.dots span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background: rgba(255,255,255,0.75);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.18s, background 0.18s;
+}
+
+.dots span.active {
+  background: var(--accent);
+  transform: scale(1.05);
+}
+
+/* ======= BLOQUE LATERAL / TEXTO (alias .texto, .galeria-titulo) ======= */
+.texto,
+.galeria-titulo {
+  max-width: 320px;
+}
+
+.texto h2,
+.galeria-titulo h2 {
+  margin: 0 0 10px;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.texto p,
+.galeria-titulo p {
+  color: #666;
+  margin: 0;
+}
+
+/* estilo decorativo para cabeceras si usas .galeria-titulo sola */
+.galeria-titulo {
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.85);
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  border-radius: 8px;
+}
+
+/* ======= RESPONSIVE: apilar en pantallas pequeñas ======= */
+@media (max-width: 720px) {
+  .galeria-bloque {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .slider, .galeria-container {
+    max-width: 100%;
+    height: 220px;
+  }
+  .texto, .galeria-titulo {
+    text-align: center;
+  }
 }
