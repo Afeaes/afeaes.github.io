@@ -773,7 +773,6 @@ header p {
 .prev, .next {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   background-color: rgba(0,0,0,0.4);
   color: white;
   border: none;
@@ -784,7 +783,7 @@ header p {
 }
 
 .prev:hover, .next:hover {
-  background: rgba(0,0,0,0.6);
+  background: #f4a261;
 }
 
 .prev { left: 10px; }
