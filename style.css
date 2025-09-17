@@ -832,4 +832,5 @@ header p {
 
 .texto p {
   color: #666;
+  text-align: justify;
 }
