@@ -789,6 +789,15 @@ header p {
 .prev { left: 10px; }
 .next { right: 10px; }
 
+.prev .flecha {
+  display: inline-block;
+  transform: translateY(2px); /* <- ajusta a ojo (1px, 2px, 3px…) */
+}
+
+.next .flecha {
+  display: inline-block;
+  transform: translateY(2px); /* <- ajusta a ojo (1px, 2px, 3px…) */
+}
 /* ======= INDICADORES ======= */
 .dots {
   position: absolute;
