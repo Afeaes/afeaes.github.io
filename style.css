@@ -796,7 +796,7 @@ header p {
 
 .next .flecha {
   display: inline-block;
-  transform: translateY(-1px); /* <- ajusta a ojo (1px, 2px, 3px…) */
+  transform: translate(2px , -1px); /* <- ajusta a ojo (1px, 2px, 3px…) */
 }
 /* ======= INDICADORES ======= */
 .dots {
