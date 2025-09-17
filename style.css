@@ -748,8 +748,8 @@ header p {
 /* ======= SLIDER ======= */
 .slider {
   position: relative;
-  width: 350px;
-  height: 220px;
+  width: 300px;
+  height: 400px;
   overflow: hidden;
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.2);
@@ -762,8 +762,8 @@ header p {
 }
 
 .slides img {
-  width: 350px;
-  height: 220px;
+  width: 300px;
+  height: 400px;
   object-fit: cover;
   flex-shrink: 0;
   border-radius: 16px;
