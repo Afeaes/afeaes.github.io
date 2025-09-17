@@ -776,7 +776,7 @@ header p {
   background-color: rgba(0,0,0,0.4);
   color: white;
   border: none;
-  padding: 8px 14px;
+  padding: 8px 10px;
   cursor: pointer;
   border-radius: 50%;
   transition: background 0.3s;
