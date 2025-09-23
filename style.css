@@ -851,5 +851,11 @@ header p {
   border-radius: 12px;
   text-align: justify;
 }
-
+.parrafo2 {
+  background: #fde6d8; /* naranja pastel suave corporativo */
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  text-align: justify;
+}
 
