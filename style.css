@@ -859,3 +859,29 @@ header p {
   text-align: justify;
 }
 
+.circulo {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+/* Solo se aplicará a los que tengan curva */
+.parrafo-curvo {
+  margin-right: 260px; /* deja sitio para el círculo */
+  clip-path: polygon(
+    0 0,
+    calc(100% - 125px) 0,
+    100% 50%,
+    calc(100% - 125px) 100%,
+    0 100%
+  );
+}
+
+.contenedor-parrafo-imagen {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
