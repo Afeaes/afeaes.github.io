@@ -858,7 +858,6 @@ header p {
   border-radius: 12px;
   text-align: justify;
 }
-
 .circulo {
   position: absolute;
   top: 50px;
@@ -866,22 +865,28 @@ header p {
   width: 250px;
   height: 250px;
   border-radius: 50%;
+  z-index: 2;
 }
 
-/* Solo se aplicará a los que tengan curva */
+.parrafo, .parrafo2 {
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: justify;
+  border-radius: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.parrafo { background: #eaf6f1; }    /* verde pastel */
+.parrafo2 { background: #fde5c3; }   /* naranja pastel */
+
+/* Solo los que deben curvarse */
 .parrafo-curvo {
-  margin-right: 260px; /* deja sitio para el círculo */
-  clip-path: polygon(
-    0 0,
-    calc(100% - 125px) 0,
-    100% 50%,
-    calc(100% - 125px) 100%,
-    0 100%
-  );
+  -webkit-clip-path: url(#curva-derecha);
+  clip-path: url(#curva-derecha);
+  margin-right: 260px; /* deja hueco para el círculo */
 }
 
 .contenedor-parrafos-imagen {
-  display: flex;
-  flex-direction: column;
   position: relative;
 }
