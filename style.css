@@ -880,7 +880,7 @@ header p {
   );
 }
 
-.contenedor-parrafo-imagen {
+.contenedor-parrafos-imagen {
   display: flex;
   flex-direction: column;
   position: relative;
