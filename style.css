@@ -858,34 +858,27 @@ header p {
   border-radius: 12px;
   text-align: justify;
 }
+/* La imagen define el hueco circular */
 .circulo {
-  position: absolute;
-  top: 50px;
-  right: 0;
+  float: right;
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  z-index: 2;
+  shape-outside: circle(50%);
+  -webkit-shape-outside: circle(50%);
+  margin-left: 20px;   /* separa texto de la imagen */
+  margin-bottom: 20px; /* deja espacio entre la imagen y lo de abajo */
 }
 
 .parrafo, .parrafo2 {
   padding: 1.5rem;
   margin-bottom: 2rem;
-  text-align: justify;
   border-radius: 12px;
-  position: relative;
-  z-index: 1;
+  text-align: justify;
 }
 
-.parrafo { background: #eaf6f1; }    /* verde pastel */
-.parrafo2 { background: #fde5c3; }   /* naranja pastel */
-
-/* Solo los que deben curvarse */
-.parrafo-curvo {
-  -webkit-clip-path: url(#curva-derecha);
-  clip-path: url(#curva-derecha);
-  margin-right: 260px; /* deja hueco para el círculo */
-}
+.parrafo { background: #eaf6f1; }   /* verde pastel */
+.parrafo2 { background: #fde5c3; }  /* naranja pastel */
 
 .contenedor-parrafos-imagen {
   position: relative;
