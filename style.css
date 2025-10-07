@@ -861,6 +861,9 @@ header p {
 
 .contenedor-parrafos-imagen {
   overflow: hidden; /* para que el float no se desborde */
+  display: flex;
+  align-items: center;  /* Esto centra verticalmente el contenido secundario (la imagen) */
+  justify-content: space-between;
 }
 
 .circulo {
