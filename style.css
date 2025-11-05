@@ -874,8 +874,16 @@ header p {
   border-radius: 50%;
   shape-outside: circle(50%);
   -webkit-shape-outside: circle(50%);
-  margin-left: 20px;
-  margin-bottom: 20px;
+}
+
+.circuloIzq {
+  float: left;
+  display: block;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  shape-outside: circle(50%);
+  -webkit-shape-outside: circle(50%);
 }
 
 .parrafo, .parrafo2 {
