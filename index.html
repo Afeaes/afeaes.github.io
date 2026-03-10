@@ -69,9 +69,25 @@
       <h1>Te damos la bienvenida a <span>AFEAES</span></h1>
     </div>
 
+    <section class="carousel-section">
+      <div class="carousel-wrapper">
+        <button class="nav prev">&#10094;</button>
+    
+        <div class="carousel" id="carousel">
+          <div class="slide pos-2"><img src="img1.jpg" alt="Imagen 1"></div>
+          <div class="slide pos-1"><img src="img2.jpg" alt="Imagen 2"></div>
+          <div class="slide pos0 active"><img src="img3.jpg" alt="Imagen 3"></div>
+          <div class="slide pos1"><img src="img4.jpg" alt="Imagen 4"></div>
+          <div class="slide pos2"><img src="img5.jpg" alt="Imagen 5"></div>
+        </div>
+    
+        <button class="nav next">&#10095;</button>
+      </div>
+    </section>
+    
     <div class="banner">
-  <img src="img/Banner.png" alt="Banner de la web">
-</div>
+      <img src="img/Banner.png" alt="Banner de la web">
+    </div>
     
     <!-- Subtítulo plano pero con acentos -->
     <div class="tarjeta tarjeta-blanca">
@@ -323,6 +339,64 @@
       header.classList.add('fade-in-bg');
     }
   });
+</script>
+
+
+<script> //Carrusel del inicio
+  const slides = document.querySelectorAll(".slide");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+
+  let current = 2; // empieza centrada la tercera imagen
+
+  function updateCarousel() {
+    const total = slides.length;
+
+    slides.forEach(slide => {
+      slide.className = "slide";
+    });
+
+    if (window.innerWidth <= 768) {
+      slides[current].classList.add("active");
+      return;
+    }
+
+    const positions = [-2, -1, 0, 1, 2];
+
+    positions.forEach(pos => {
+      let index = (current + pos + total) % total;
+      if (pos === 0) {
+        slides[index].classList.add("pos0", "active");
+      } else if (pos === -1) {
+        slides[index].classList.add("pos-1");
+      } else if (pos === 1) {
+        slides[index].classList.add("pos1");
+      } else if (pos === -2) {
+        slides[index].classList.add("pos-2");
+      } else if (pos === 2) {
+        slides[index].classList.add("pos2");
+      }
+    });
+  }
+
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    current = (current - 1 + slides.length) % slides.length;
+    updateCarousel();
+  }
+
+  nextBtn.addEventListener("click", nextSlide);
+  prevBtn.addEventListener("click", prevSlide);
+
+  setInterval(nextSlide, 4000); // cambia cada 4 segundos
+
+  window.addEventListener("resize", updateCarousel);
+
+  updateCarousel();
 </script>
   
 </body>
