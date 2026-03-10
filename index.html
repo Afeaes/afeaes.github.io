@@ -73,12 +73,15 @@
       <div class="carousel-wrapper">
         <button class="nav prev">&#10094;</button>
     
-        <div class="carousel" id="carousel">
-          <div class="slide pos-2"><img src="img1.jpg" alt="Imagen 1"></div>
-          <div class="slide pos-1"><img src="img2.jpg" alt="Imagen 2"></div>
-          <div class="slide pos0 active"><img src="img3.jpg" alt="Imagen 3"></div>
-          <div class="slide pos1"><img src="img4.jpg" alt="Imagen 4"></div>
-          <div class="slide pos2"><img src="img5.jpg" alt="Imagen 5"></div>
+        <div class="carousel">
+          <div class="slide"><img src="img/img1.jpg" alt="Imagen 1"><div class="overlay"></div></div>
+          <div class="slide"><img src="img/img2.jpg" alt="Imagen 2"><div class="overlay"></div></div>
+          <div class="slide"><img src="img/img3.jpg" alt="Imagen 3"><div class="overlay"></div></div>
+          <div class="slide"><img src="img/img4.jpg" alt="Imagen 4"><div class="overlay"></div></div>
+          <div class="slide"><img src="img/img5.jpg" alt="Imagen 5"><div class="overlay"></div></div>
+          <div class="slide"><img src="img/img6.jpg" alt="Imagen 6"><div class="overlay"></div></div>
+          <div class="slide"><img src="img/img7.jpg" alt="Imagen 7"><div class="overlay"></div></div>
+          <div class="slide"><img src="img/img8.jpg" alt="Imagen 8"><div class="overlay"></div></div>
         </div>
     
         <button class="nav next">&#10095;</button>
@@ -342,12 +345,12 @@
 </script>
 
 
-<script> //Carrusel del inicio
+<script>
   const slides = document.querySelectorAll(".slide");
   const prevBtn = document.querySelector(".prev");
   const nextBtn = document.querySelector(".next");
 
-  let current = 2; // empieza centrada la tercera imagen
+  let current = 0;
 
   function updateCarousel() {
     const total = slides.length;
@@ -361,22 +364,17 @@
       return;
     }
 
-    const positions = [-2, -1, 0, 1, 2];
+    const center = current;
+    const prev1 = (current - 1 + total) % total;
+    const prev2 = (current - 2 + total) % total;
+    const next1 = (current + 1) % total;
+    const next2 = (current + 2) % total;
 
-    positions.forEach(pos => {
-      let index = (current + pos + total) % total;
-      if (pos === 0) {
-        slides[index].classList.add("pos0", "active");
-      } else if (pos === -1) {
-        slides[index].classList.add("pos-1");
-      } else if (pos === 1) {
-        slides[index].classList.add("pos1");
-      } else if (pos === -2) {
-        slides[index].classList.add("pos-2");
-      } else if (pos === 2) {
-        slides[index].classList.add("pos2");
-      }
-    });
+    slides[center].classList.add("pos0", "active");
+    slides[prev1].classList.add("pos-1");
+    slides[prev2].classList.add("pos-2");
+    slides[next1].classList.add("pos1");
+    slides[next2].classList.add("pos2");
   }
 
   function nextSlide() {
@@ -392,7 +390,7 @@
   nextBtn.addEventListener("click", nextSlide);
   prevBtn.addEventListener("click", prevSlide);
 
-  setInterval(nextSlide, 4000); // cambia cada 4 segundos
+  setInterval(nextSlide, 4000);
 
   window.addEventListener("resize", updateCarousel);
 
