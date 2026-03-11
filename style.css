@@ -903,8 +903,6 @@ header p {
 
 
 
-
-
 .image-carousel-section {
   width: 100%;
   padding: 40px 0;
@@ -916,7 +914,7 @@ header p {
   position: relative;
   width: 96%;
   max-width: 1650px;
-  height: 520px;
+  height: 560px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -955,10 +953,10 @@ header p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 
-/* capa blanca */
 .image-carousel-overlay {
   position: absolute;
   inset: 0;
@@ -966,10 +964,11 @@ header p {
   transition: background 0.9s ease;
 }
 
-/* imagen central */
+/* CENTRAL: más vertical, fija visualmente */
 .image-carousel-pos0 {
-  width: 52%;
   height: 440px;
+  aspect-ratio: 4 / 5;
+  width: auto;
   opacity: 1;
   z-index: 5;
   filter: none;
@@ -979,12 +978,13 @@ header p {
   background: rgba(255, 255, 255, 0);
 }
 
-/* lateral izquierda cercana */
+/* LATERALES CERCANAS: más separadas */
 .image-carousel-pos-minus-1 {
-  width: 30%;
-  height: 310px;
-  transform: translate(-125%, -50%);
-  opacity: 0.9;
+  height: 320px;
+  aspect-ratio: 4 / 5;
+  width: auto;
+  transform: translate(-160%, -50%);
+  opacity: 0.88;
   z-index: 4;
   filter: blur(1px);
 }
@@ -993,12 +993,12 @@ header p {
   background: rgba(255, 255, 255, 0.22);
 }
 
-/* lateral derecha cercana */
 .image-carousel-pos-plus-1 {
-  width: 30%;
-  height: 310px;
-  transform: translate(25%, -50%);
-  opacity: 0.9;
+  height: 320px;
+  aspect-ratio: 4 / 5;
+  width: auto;
+  transform: translate(60%, -50%);
+  opacity: 0.88;
   z-index: 4;
   filter: blur(1px);
 }
@@ -1007,12 +1007,13 @@ header p {
   background: rgba(255, 255, 255, 0.22);
 }
 
-/* lateral izquierda lejana */
+/* LATERALES LEJANAS: aún más abiertas */
 .image-carousel-pos-minus-2 {
-  width: 18%;
-  height: 220px;
-  transform: translate(-220%, -50%);
-  opacity: 0.6;
+  height: 230px;
+  aspect-ratio: 4 / 5;
+  width: auto;
+  transform: translate(-290%, -50%);
+  opacity: 0.58;
   z-index: 3;
   filter: blur(2px);
 }
@@ -1021,12 +1022,12 @@ header p {
   background: rgba(255, 255, 255, 0.38);
 }
 
-/* lateral derecha lejana */
 .image-carousel-pos-plus-2 {
-  width: 18%;
-  height: 220px;
-  transform: translate(120%, -50%);
-  opacity: 0.6;
+  height: 230px;
+  aspect-ratio: 4 / 5;
+  width: auto;
+  transform: translate(190%, -50%);
+  opacity: 0.58;
   z-index: 3;
   filter: blur(2px);
 }
@@ -1068,17 +1069,52 @@ header p {
   right: 18px;
 }
 
-/* móvil */
+/* pantallas grandes: abrimos aún más la ruleta */
+@media (min-width: 1400px) {
+  .image-carousel-wrapper {
+    height: 620px;
+  }
+
+  .image-carousel-pos0 {
+    height: 500px;
+  }
+
+  .image-carousel-pos-minus-1,
+  .image-carousel-pos-plus-1 {
+    height: 350px;
+  }
+
+  .image-carousel-pos-minus-2 {
+    height: 250px;
+    transform: translate(-320%, -50%);
+  }
+
+  .image-carousel-pos-plus-2 {
+    height: 250px;
+    transform: translate(220%, -50%);
+  }
+
+  .image-carousel-pos-minus-1 {
+    transform: translate(-175%, -50%);
+  }
+
+  .image-carousel-pos-plus-1 {
+    transform: translate(75%, -50%);
+  }
+}
+
+/* móvil: una sola imagen */
 @media (max-width: 768px) {
   .image-carousel-wrapper {
     width: 100%;
-    height: 320px;
+    height: 420px;
     padding: 0 12px;
   }
 
   .image-carousel-slide {
     width: 100% !important;
     height: 100% !important;
+    aspect-ratio: auto !important;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%) !important;
