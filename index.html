@@ -69,24 +69,56 @@
       <h1>Te damos la bienvenida a <span>AFEAES</span></h1>
     </div>
 
-    <section class="carousel-section">
-      <div class="carousel-wrapper">
-        <button class="nav prev">&#10094;</button>
+
+    <section class="image-carousel-section">
+      <div class="image-carousel-wrapper">
+        <button class="image-carousel-nav image-carousel-prev">&#10094;</button>
     
-        <div class="carousel">
-          <div class="slide"><img src="img/img1.jpg" alt="Imagen 1"><div class="overlay"></div></div>
-          <div class="slide"><img src="img/img2.jpg" alt="Imagen 2"><div class="overlay"></div></div>
-          <div class="slide"><img src="img/img3.jpg" alt="Imagen 3"><div class="overlay"></div></div>
-          <div class="slide"><img src="img/img4.jpg" alt="Imagen 4"><div class="overlay"></div></div>
-          <div class="slide"><img src="img/img5.jpg" alt="Imagen 5"><div class="overlay"></div></div>
-          <div class="slide"><img src="img/img6.jpg" alt="Imagen 6"><div class="overlay"></div></div>
-          <div class="slide"><img src="img/img7.jpg" alt="Imagen 7"><div class="overlay"></div></div>
-          <div class="slide"><img src="img/img8.jpg" alt="Imagen 8"><div class="overlay"></div></div>
+        <div class="image-carousel-track">
+          <div class="image-carousel-slide">
+            <img src="img/Logo.png" alt="Imagen 1">
+            <div class="image-carousel-overlay"></div>
+          </div>
+    
+          <div class="image-carousel-slide">
+            <img src="img/Recepcion2.jpg" alt="Imagen 2">
+            <div class="image-carousel-overlay"></div>
+          </div>
+    
+          <div class="image-carousel-slide">
+            <img src="img/Patio1.jpg" alt="Imagen 3">
+            <div class="image-carousel-overlay"></div>
+          </div>
+    
+          <div class="image-carousel-slide">
+            <img src="img/Taller1-1.jpg" alt="Imagen 4">
+            <div class="image-carousel-overlay"></div>
+          </div>
+    
+          <div class="image-carousel-slide">
+            <img src="img/Taller2-2.jpg" alt="Imagen 5">
+            <div class="image-carousel-overlay"></div>
+          </div>
+    
+          <div class="image-carousel-slide">
+            <img src="img/Furgo1.jpg" alt="Imagen 6">
+            <div class="image-carousel-overlay"></div>
+          </div>
+    
+          <div class="image-carousel-slide">
+            <img src="img/Exterior3.jpg" alt="Imagen 7">
+            <div class="image-carousel-overlay"></div>
+          </div>
+    
+          <div class="image-carousel-slide">
+            <img src="img/Multisenso2.jpg" alt="Imagen 8">
+            <div class="image-carousel-overlay"></div>
+          </div>
         </div>
-    
-        <button class="nav next">&#10095;</button>
-      </div>
-    </section>
+
+    <button class="image-carousel-nav image-carousel-next">&#10095;</button>
+  </div>
+</section>
     
     <div class="banner">
       <img src="img/Banner.png" alt="Banner de la web">
@@ -344,57 +376,84 @@
   });
 </script>
 
-
 <script>
-  const slides = document.querySelectorAll(".slide");
-  const prevBtn = document.querySelector(".prev");
-  const nextBtn = document.querySelector(".next");
+  const imageCarouselSlides = document.querySelectorAll(".image-carousel-slide");
+  const imageCarouselPrevButton = document.querySelector(".image-carousel-prev");
+  const imageCarouselNextButton = document.querySelector(".image-carousel-next");
 
-  let current = 0;
+  let imageCarouselCurrentIndex = 0;
+  let imageCarouselInterval;
 
-  function updateCarousel() {
-    const total = slides.length;
+  function imageCarouselClearPositionClasses(slide) {
+    slide.classList.remove(
+      "image-carousel-pos-minus-2",
+      "image-carousel-pos-minus-1",
+      "image-carousel-pos0",
+      "image-carousel-pos-plus-1",
+      "image-carousel-pos-plus-2",
+      "image-carousel-active"
+    );
+  }
 
-    slides.forEach(slide => {
-      slide.className = "slide";
+  function imageCarouselUpdate() {
+    const imageCarouselTotal = imageCarouselSlides.length;
+
+    imageCarouselSlides.forEach((slide) => {
+      imageCarouselClearPositionClasses(slide);
     });
 
     if (window.innerWidth <= 768) {
-      slides[current].classList.add("active");
+      imageCarouselSlides[imageCarouselCurrentIndex].classList.add("image-carousel-active");
       return;
     }
 
-    const center = current;
-    const prev1 = (current - 1 + total) % total;
-    const prev2 = (current - 2 + total) % total;
-    const next1 = (current + 1) % total;
-    const next2 = (current + 2) % total;
+    const imageCarouselCenter = imageCarouselCurrentIndex;
+    const imageCarouselPrev1 = (imageCarouselCurrentIndex - 1 + imageCarouselTotal) % imageCarouselTotal;
+    const imageCarouselPrev2 = (imageCarouselCurrentIndex - 2 + imageCarouselTotal) % imageCarouselTotal;
+    const imageCarouselNext1 = (imageCarouselCurrentIndex + 1) % imageCarouselTotal;
+    const imageCarouselNext2 = (imageCarouselCurrentIndex + 2) % imageCarouselTotal;
 
-    slides[center].classList.add("pos0", "active");
-    slides[prev1].classList.add("pos-1");
-    slides[prev2].classList.add("pos-2");
-    slides[next1].classList.add("pos1");
-    slides[next2].classList.add("pos2");
+    imageCarouselSlides[imageCarouselCenter].classList.add("image-carousel-pos0", "image-carousel-active");
+    imageCarouselSlides[imageCarouselPrev1].classList.add("image-carousel-pos-minus-1");
+    imageCarouselSlides[imageCarouselPrev2].classList.add("image-carousel-pos-minus-2");
+    imageCarouselSlides[imageCarouselNext1].classList.add("image-carousel-pos-plus-1");
+    imageCarouselSlides[imageCarouselNext2].classList.add("image-carousel-pos-plus-2");
   }
 
-  function nextSlide() {
-    current = (current + 1) % slides.length;
-    updateCarousel();
+  function imageCarouselGoNext() {
+    imageCarouselCurrentIndex = (imageCarouselCurrentIndex + 1) % imageCarouselSlides.length;
+    imageCarouselUpdate();
   }
 
-  function prevSlide() {
-    current = (current - 1 + slides.length) % slides.length;
-    updateCarousel();
+  function imageCarouselGoPrev() {
+    imageCarouselCurrentIndex = (imageCarouselCurrentIndex - 1 + imageCarouselSlides.length) % imageCarouselSlides.length;
+    imageCarouselUpdate();
   }
 
-  nextBtn.addEventListener("click", nextSlide);
-  prevBtn.addEventListener("click", prevSlide);
+  function imageCarouselStartAutoplay() {
+    imageCarouselInterval = setInterval(imageCarouselGoNext, 4000);
+  }
 
-  setInterval(nextSlide, 4000);
+  function imageCarouselStopAutoplay() {
+    clearInterval(imageCarouselInterval);
+  }
 
-  window.addEventListener("resize", updateCarousel);
+  imageCarouselNextButton.addEventListener("click", () => {
+    imageCarouselStopAutoplay();
+    imageCarouselGoNext();
+    imageCarouselStartAutoplay();
+  });
 
-  updateCarousel();
+  imageCarouselPrevButton.addEventListener("click", () => {
+    imageCarouselStopAutoplay();
+    imageCarouselGoPrev();
+    imageCarouselStartAutoplay();
+  });
+
+  window.addEventListener("resize", imageCarouselUpdate);
+
+  imageCarouselUpdate();
+  imageCarouselStartAutoplay();
 </script>
   
 </body>
