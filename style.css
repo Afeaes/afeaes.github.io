@@ -1331,12 +1331,11 @@ header p {
   padding: 90px 20px 100px;
   overflow: hidden;
   background:
-    radial-gradient(circle at 12% 18%, rgba(255, 126, 71, 0.16), transparent 20%),
-    radial-gradient(circle at 85% 82%, rgba(255, 126, 71, 0.12), transparent 24%),
-    linear-gradient(180deg, #fff4ee 0%, #fffaf7 38%, #ffffff 100%);
+    radial-gradient(circle at 12% 18%, rgba(255, 126, 71, 0.10), transparent 20%),
+    radial-gradient(circle at 85% 82%, rgba(255, 126, 71, 0.08), transparent 24%),
+    linear-gradient(180deg, #fff7f2 0%, #fffaf7 40%, #ffffff 100%);
 }
 
-/* capa decorativa interior, sin salirse del ancho */
 .organigrama-asociacion-section::before,
 .organigrama-asociacion-section::after {
   content: "";
@@ -1351,7 +1350,7 @@ header p {
   height: 260px;
   top: 35px;
   left: 2%;
-  background: radial-gradient(circle, rgba(255, 126, 71, 0.10) 0%, rgba(255, 126, 71, 0.03) 55%, transparent 72%);
+  background: radial-gradient(circle, rgba(255, 126, 71, 0.08) 0%, rgba(255, 126, 71, 0.02) 55%, transparent 72%);
   filter: blur(10px);
 }
 
@@ -1360,19 +1359,43 @@ header p {
   height: 320px;
   right: 1%;
   bottom: 10px;
-  background: radial-gradient(circle, rgba(255, 126, 71, 0.08) 0%, rgba(255, 126, 71, 0.02) 58%, transparent 75%);
+  background: radial-gradient(circle, rgba(255, 126, 71, 0.06) 0%, rgba(255, 126, 71, 0.02) 58%, transparent 75%);
   filter: blur(12px);
 }
 
 .organigrama-asociacion-container {
   position: relative;
   z-index: 2;
-  width: 100%;
   max-width: 1240px;
   margin: 0 auto;
 }
 
+.organigrama-asociacion-shell {
+  position: relative;
+  padding: 56px 36px 52px;
+  border-radius: 38px;
+  background:
+    linear-gradient(180deg, #dbe8dc 0%, #e8f0e9 100%);
+  box-shadow:
+    0 28px 60px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+}
+
+.organigrama-asociacion-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.35), transparent 20%),
+    radial-gradient(circle at 85% 80%, rgba(255, 255, 255, 0.25), transparent 24%);
+  pointer-events: none;
+}
+
 .organigrama-asociacion-header {
+  position: relative;
+  z-index: 2;
   text-align: center;
   margin-bottom: 54px;
 }
@@ -1388,24 +1411,25 @@ header p {
   margin: 0;
   font-size: 1rem;
   line-height: 1.6;
-  color: #747474;
+  color: #5f6b61;
 }
 
 .organigrama-asociacion-board {
   position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .organigrama-asociacion-top {
-  position: relative;
-  z-index: 3;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .organigrama-asociacion-bottom {
-  position: relative;
-  z-index: 3;
   width: 100%;
   max-width: 980px;
   display: grid;
@@ -1464,16 +1488,22 @@ header p {
 .organigrama-asociacion-card {
   position: relative;
   min-width: 0;
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(8px);
+  min-height: 168px;
+  padding: 24px 20px;
   border-radius: 30px;
-  padding: 28px 22px 24px;
-  min-height: 152px;
-  text-align: center;
+  background: rgba(255, 255, 255, 0.94);
   border: 1px solid rgba(255, 126, 71, 0.14);
   box-shadow:
     0 18px 40px rgba(0, 0, 0, 0.08),
     0 4px 14px rgba(255, 126, 71, 0.04);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+
   transition:
     transform 0.35s ease,
     box-shadow 0.35s ease,
@@ -1499,14 +1529,14 @@ header p {
 
 .organigrama-asociacion-card-principal {
   width: min(100%, 430px);
-  min-height: 200px;
-  padding: 36px 28px 30px;
-  background:
-    linear-gradient(180deg, #fffdfb 0%, #ffffff 100%);
+  min-height: 210px;
+  padding: 30px 26px;
+  background: linear-gradient(180deg, #fffdfb 0%, #ffffff 100%);
   border: 1px solid rgba(255, 126, 71, 0.22);
   box-shadow:
     0 24px 56px rgba(255, 126, 71, 0.12),
     0 12px 28px rgba(0, 0, 0, 0.07);
+  margin: 0 auto;
 }
 
 .organigrama-asociacion-card-principal::after {
@@ -1520,12 +1550,12 @@ header p {
 
 .organigrama-asociacion-card-role-badge {
   display: inline-block;
-  margin-bottom: 16px;
-  padding: 9px 16px;
+  margin: 0;
+  padding: 11px 18px;
   border-radius: 999px;
   background: rgba(255, 126, 71, 0.12);
   color: #d86635;
-  font-size: 0.92rem;
+  font-size: 1.05rem;
   line-height: 1.2;
   font-weight: 700;
   letter-spacing: 0.01em;
@@ -1533,20 +1563,20 @@ header p {
 }
 
 .organigrama-asociacion-card-principal .organigrama-asociacion-card-role-badge {
-  font-size: 0.98rem;
-  padding: 10px 18px;
+  font-size: 1.2rem;
+  padding: 12px 20px;
 }
 
 .organigrama-asociacion-card-name {
   margin: 0;
-  font-size: 1.12rem;
+  font-size: 1rem;
   line-height: 1.45;
-  font-weight: 700;
+  font-weight: 600;
   color: #2f2f2f;
 }
 
 .organigrama-asociacion-card-principal .organigrama-asociacion-card-name {
-  font-size: 1.3rem;
+  font-size: 1.08rem;
 }
 
 @media (max-width: 980px) {
@@ -1559,6 +1589,11 @@ header p {
 @media (max-width: 760px) {
   .organigrama-asociacion-section {
     padding: 72px 16px 82px;
+  }
+
+  .organigrama-asociacion-shell {
+    padding: 38px 18px 34px;
+    border-radius: 28px;
   }
 
   .organigrama-asociacion-title {
@@ -1589,7 +1624,7 @@ header p {
   }
 
   .organigrama-asociacion-card {
-    min-height: auto;
+    min-height: 145px;
   }
 }
 
@@ -1602,15 +1637,15 @@ header p {
     font-size: 0.95rem;
   }
 
-  .organigrama-asociacion-card-principal .organigrama-asociacion-card-name {
-    font-size: 1.18rem;
-  }
-
-  .organigrama-asociacion-card-name {
-    font-size: 1rem;
+  .organigrama-asociacion-card-principal .organigrama-asociacion-card-role-badge {
+    font-size: 1.08rem;
   }
 
   .organigrama-asociacion-card-role-badge {
-    font-size: 0.88rem;
+    font-size: 0.98rem;
+  }
+
+  .organigrama-asociacion-card-name {
+    font-size: 0.95rem;
   }
 }
