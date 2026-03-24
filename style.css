@@ -70,7 +70,7 @@ nav a:hover::after {
 .seccion {
   display: none;
   max-width: 900px;
-  margin: 60px auto;
+  margin: auto;
   padding: 40px;
   background-color: var(--blanco);
   border-radius: 12px;
