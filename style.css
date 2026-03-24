@@ -1328,7 +1328,7 @@ header p {
 .organigrama-asociacion-section {
   position: relative;
   max-width: 100%;
-  padding: 90px 20px 100px;
+  padding: 0px 20px 100px;
   overflow: hidden;
   background:
     radial-gradient(circle at 12% 18%, rgba(255, 126, 71, 0.10), transparent 20%),
