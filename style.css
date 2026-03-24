@@ -1649,3 +1649,56 @@ header p {
     font-size: 0.95rem;
   }
 }
+
+.codigo-etico h2 {
+  margin-bottom: 40px;
+}
+
+.codigo-etico .bloque-etico {
+  margin-bottom: 28px;
+}
+
+.codigo-etico h3 {
+  font-size: 1.45rem;
+  color: #2f5a3f;
+  margin-bottom: 16px;
+}
+
+.codigo-etico .parrafo p,
+.codigo-etico .parrafo2 p {
+  margin-bottom: 14px;
+}
+
+.codigo-etico .parrafo p:last-child,
+.codigo-etico .parrafo2 p:last-child {
+  margin-bottom: 0;
+}
+
+.lista-etica {
+  margin-top: 18px;
+  padding-left: 22px;
+}
+
+.lista-etica li {
+  margin-bottom: 10px;
+  line-height: 1.7;
+  color: #4f6658;
+}
+
+.bloque-alerta-etica {
+  border-left: 6px solid #b97c63;
+}
+
+@media (max-width: 768px) {
+  .codigo-etico h3 {
+    font-size: 1.25rem;
+  }
+
+  .lista-etica {
+    padding-left: 18px;
+  }
+
+  .lista-etica li {
+    font-size: 0.98rem;
+  }
+}
