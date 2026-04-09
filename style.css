@@ -1859,3 +1859,49 @@ header p {
     font-size: 0.96rem;
   }
 }
+
+.tarjeta-servicio {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: transform 0.8s ease, opacity 0.8s ease, box-shadow 0.25s ease;
+}
+
+/* Tarjetas de la columna izquierda */
+.tarjeta-servicio.entrada-izquierda {
+  transform: translateX(-90px);
+}
+
+/* Tarjetas de la columna derecha */
+.tarjeta-servicio.entrada-derecha {
+  transform: translateX(90px);
+}
+
+/* Estado final visible */
+.tarjeta-servicio.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* En móvil todas entran más suave */
+@media (max-width: 950px) {
+  .tarjeta-servicio.entrada-izquierda,
+  .tarjeta-servicio.entrada-derecha {
+    transform: translateY(40px);
+  }
+
+  .tarjeta-servicio.visible {
+    transform: translateY(0);
+  }
+}
+
+/* Respeto por accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .tarjeta-servicio,
+  .tarjeta-servicio.entrada-izquierda,
+  .tarjeta-servicio.entrada-derecha,
+  .tarjeta-servicio.visible {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
