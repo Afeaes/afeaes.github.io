@@ -300,5 +300,45 @@
   });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const bloques = document.querySelectorAll(".tarjetas-unidad-dia");
+
+  bloques.forEach((bloque) => {
+    const tarjetas = bloque.querySelectorAll(".tarjeta-servicio");
+
+    tarjetas.forEach((tarjeta, index) => {
+      if (window.innerWidth <= 950) {
+        tarjeta.classList.add("entrada-izquierda");
+      } else {
+        if (index % 2 === 0) {
+          tarjeta.classList.add("entrada-izquierda");
+        } else {
+          tarjeta.classList.add("entrada-derecha");
+        }
+      }
+    });
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.18
+    }
+  );
+
+  document.querySelectorAll(".tarjeta-servicio").forEach((tarjeta) => {
+    observer.observe(tarjeta);
+  });
+});
+</script>
+  
 </body>
 </html>
