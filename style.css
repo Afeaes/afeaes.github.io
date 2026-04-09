@@ -1767,9 +1767,9 @@ header p {
 .tarjeta-servicio-img {
   width: 42%;
   min-width: 42%;
-  height: 220px;
   overflow: hidden;
   flex-shrink: 0;
+  align-self: stretch;
 }
 
 .tarjeta-servicio-img img {
