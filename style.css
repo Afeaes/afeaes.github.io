@@ -1903,3 +1903,8 @@ header p {
     opacity: 1;
   }
 }
+
+
+.familia-cuidadores .unidad-dia-intro {
+  max-width: 950px;
+}
