@@ -161,7 +161,7 @@
   </div>
   <div class="bloque">
     <h4>Dirección</h4>
-    <p><a href=https://maps.app.goo.gl/oc33pURwxrt7ohYJ9>Avd. Salud Gutiérrez, s/n<br>Alcalá de Guadaíra (Sevilla)</a></p>
+    <p><a href="https://maps.app.goo.gl/oc33pURwxrt7ohYJ9">Avd. Salud Gutiérrez, s/n<br>Alcalá de Guadaíra (Sevilla)</a></p>
   </div>
   <div class="bloque">
     <h4>Contacto</h4>
@@ -174,7 +174,6 @@
 </footer>
 
 <script>
-  // Menú hamburguesa
   const toggleBtn = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
 
@@ -192,6 +191,46 @@
 </script>
 
 <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const bloques = document.querySelectorAll(".tarjetas-unidad-dia");
+
+  bloques.forEach((bloque) => {
+    const tarjetas = bloque.querySelectorAll(".tarjeta-servicio");
+
+    tarjetas.forEach((tarjeta, index) => {
+      if (window.innerWidth <= 950) {
+        tarjeta.classList.add("entrada-izquierda");
+      } else {
+        if (index % 2 === 0) {
+          tarjeta.classList.add("entrada-izquierda");
+        } else {
+          tarjeta.classList.add("entrada-derecha");
+        }
+      }
+    });
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.18
+    }
+  );
+
+  document.querySelectorAll(".tarjeta-servicio").forEach((tarjeta) => {
+    observer.observe(tarjeta);
+  });
+});
+</script>
+
+<script>
   if ("scrollRestoration" in history) {
     history.scrollRestoration = "manual";
   }
@@ -200,6 +239,6 @@
     window.scrollTo(0, 0);
   });
 </script>
-  
+
 </body>
 </html>
