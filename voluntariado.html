@@ -57,7 +57,92 @@
 </nav>
 
 <main>
-  <!-- Aquí va el contenido específico de cada página -->
+<section class="unidad-dia">
+  <h2>Voluntariado</h2>
+  <p class="unidad-dia-intro">
+    En AFEAES valoramos profundamente la implicación de las personas voluntarias.
+    Por ello, ofrecemos orientación, acompañamiento y espacios de participación
+    para que su colaboración se desarrolle de forma útil, cercana y coordinada
+    con la labor diaria de la asociación.
+  </p>
+
+  <div class="bloque-unidad-dia">
+    <h3>Participación y acompañamiento al voluntariado</h3>
+    <div class="tarjetas-unidad-dia">
+
+      <article class="tarjeta-servicio">
+        <div class="tarjeta-servicio-img">
+          <img src="img/informacion-acogida-voluntariado.jpg" alt="Información y acogida al voluntariado">
+        </div>
+        <div class="tarjeta-servicio-texto">
+          <h4>Información y acogida al voluntariado</h4>
+          <p>
+            Ofrecemos un primer espacio de información y acogida para dar a conocer
+            la labor de AFEAES, el papel del voluntariado dentro de la asociación y
+            la forma en que puede colaborar de manera útil, respetuosa y coordinada.
+          </p>
+        </div>
+      </article>
+
+      <article class="tarjeta-servicio">
+        <div class="tarjeta-servicio-img">
+          <img src="img/formacion-voluntariado.jpg" alt="Formación inicial y orientación">
+        </div>
+        <div class="tarjeta-servicio-texto">
+          <h4>Formación inicial y orientación</h4>
+          <p>
+            Facilitamos una orientación básica sobre el Alzheimer y otras demencias,
+            así como pautas de comunicación, acompañamiento y relación con las personas
+            usuarias, con el fin de favorecer una participación adecuada y responsable.
+          </p>
+        </div>
+      </article>
+
+      <article class="tarjeta-servicio">
+        <div class="tarjeta-servicio-img">
+          <img src="img/seguimiento-voluntariado.jpg" alt="Acompañamiento y seguimiento">
+        </div>
+        <div class="tarjeta-servicio-texto">
+          <h4>Acompañamiento y seguimiento</h4>
+          <p>
+            El voluntariado cuenta con apoyo y seguimiento por parte del equipo de la
+            asociación, ofreciendo orientación, resolución de dudas y acompañamiento
+            durante su participación en las distintas actividades y acciones solidarias.
+          </p>
+        </div>
+      </article>
+
+      <article class="tarjeta-servicio">
+        <div class="tarjeta-servicio-img">
+          <img src="img/actividades-voluntariado.jpg" alt="Participación en actividades y talleres">
+        </div>
+        <div class="tarjeta-servicio-texto">
+          <h4>Participación en actividades y talleres</h4>
+          <p>
+            Las personas voluntarias pueden colaborar en distintas actividades, talleres
+            e iniciativas de la asociación, aportando cercanía, apoyo y participación
+            en la vida diaria de AFEAES.
+          </p>
+        </div>
+      </article>
+
+      <article class="tarjeta-servicio">
+        <div class="tarjeta-servicio-img">
+          <img src="img/eventos-voluntariado.jpg" alt="Colaboración en eventos y acciones solidarias">
+        </div>
+        <div class="tarjeta-servicio-texto">
+          <h4>Colaboración en eventos y acciones solidarias</h4>
+          <p>
+            El voluntariado también participa en campañas, celebraciones, salidas,
+            eventos especiales y otras acciones de sensibilización y apoyo comunitario,
+            ayudando a reforzar la presencia social de la asociación.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
 </main>
 
 <footer class="footer-bloques">
@@ -67,7 +152,7 @@
   </div>
   <div class="bloque">
     <h4>Dirección</h4>
-    <p><a href=https://maps.app.goo.gl/oc33pURwxrt7ohYJ9>Avd. Salud Gutiérrez, s/n<br>Alcalá de Guadaíra (Sevilla)</a></p>
+    <p><a href="https://maps.app.goo.gl/oc33pURwxrt7ohYJ9">Avd. Salud Gutiérrez, s/n<br>Alcalá de Guadaíra (Sevilla)</a></p>
   </div>
   <div class="bloque">
     <h4>Contacto</h4>
@@ -80,7 +165,6 @@
 </footer>
 
 <script>
-  // Menú hamburguesa
   const toggleBtn = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
 
@@ -98,6 +182,46 @@
 </script>
 
 <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const bloques = document.querySelectorAll(".tarjetas-unidad-dia");
+
+  bloques.forEach((bloque) => {
+    const tarjetas = bloque.querySelectorAll(".tarjeta-servicio");
+
+    tarjetas.forEach((tarjeta, index) => {
+      if (window.innerWidth <= 950) {
+        tarjeta.classList.add("entrada-izquierda");
+      } else {
+        if (index % 2 === 0) {
+          tarjeta.classList.add("entrada-izquierda");
+        } else {
+          tarjeta.classList.add("entrada-derecha");
+        }
+      }
+    });
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.18
+    }
+  );
+
+  document.querySelectorAll(".tarjeta-servicio").forEach((tarjeta) => {
+    observer.observe(tarjeta);
+  });
+});
+</script>
+
+<script>
   if ("scrollRestoration" in history) {
     history.scrollRestoration = "manual";
   }
@@ -106,6 +230,6 @@
     window.scrollTo(0, 0);
   });
 </script>
-  
+
 </body>
 </html>
