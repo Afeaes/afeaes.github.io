@@ -57,7 +57,91 @@
 </nav>
 
 <main>
-  <!-- Aquí va el contenido específico de cada página -->
+<section class="unidad-dia">
+  <h2>Socios</h2>
+  <p class="unidad-dia-intro">
+    Formar parte de AFEAES como socio supone integrarse activamente en la vida de la
+    asociación, mantenerse informado sobre su labor y contribuir al sostenimiento de
+    una entidad comprometida con las personas con Alzheimer y sus familias.
+  </p>
+
+  <div class="bloque-unidad-dia">
+    <h3>Información, participación y atención al socio</h3>
+    <div class="tarjetas-unidad-dia">
+
+      <article class="tarjeta-servicio">
+        <div class="tarjeta-servicio-img">
+          <img src="img/alta-gestion-socio.jpg" alt="Alta y gestión como socio">
+        </div>
+        <div class="tarjeta-servicio-texto">
+          <h4>Alta y gestión como socio</h4>
+          <p>
+            Ofrecemos información y atención sobre el proceso de alta, las cuotas,
+            la documentación necesaria y otras gestiones administrativas relacionadas
+            con la condición de socio dentro de la asociación.
+          </p>
+        </div>
+      </article>
+
+      <article class="tarjeta-servicio">
+        <div class="tarjeta-servicio-img">
+          <img src="img/informacion-asociacion.jpg" alt="Información sobre la asociación">
+        </div>
+        <div class="tarjeta-servicio-texto">
+          <h4>Información sobre la asociación</h4>
+          <p>
+            Facilitamos a los socios información sobre la labor que desarrolla AFEAES,
+            sus proyectos, actividades, campañas e iniciativas, favoreciendo un conocimiento
+            cercano de la entidad y de su trabajo diario.
+          </p>
+        </div>
+      </article>
+
+      <article class="tarjeta-servicio">
+        <div class="tarjeta-servicio-img">
+          <img src="img/vida-asociativa.jpg" alt="Participación en la vida asociativa">
+        </div>
+        <div class="tarjeta-servicio-texto">
+          <h4>Participación en la vida asociativa</h4>
+          <p>
+            Las personas socias forman parte de la vida de la asociación y pueden participar
+            en asambleas, propuestas, campañas, actividades e iniciativas que contribuyen
+            al crecimiento y fortalecimiento de AFEAES.
+          </p>
+        </div>
+      </article>
+
+      <article class="tarjeta-servicio">
+        <div class="tarjeta-servicio-img">
+          <img src="img/recursos-servicios-socios.jpg" alt="Orientación sobre recursos y servicios">
+        </div>
+        <div class="tarjeta-servicio-texto">
+          <h4>Orientación sobre recursos y servicios</h4>
+          <p>
+            Ofrecemos información general sobre los servicios y programas de la asociación,
+            orientando a las personas socias para que puedan conocer los recursos disponibles
+            y dirigirse al área más adecuada según cada necesidad.
+          </p>
+        </div>
+      </article>
+
+      <article class="tarjeta-servicio">
+        <div class="tarjeta-servicio-img">
+          <img src="img/informacion-periodica-socios.jpg" alt="Información periódica y seguimiento de la actividad">
+        </div>
+        <div class="tarjeta-servicio-texto">
+          <h4>Información periódica y seguimiento de la actividad</h4>
+          <p>
+            Mantenemos a las personas socias informadas sobre novedades, actividades,
+            eventos, campañas y otras acciones relevantes de la asociación, favoreciendo
+            una relación cercana y continua con la entidad.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
 </main>
 
 <footer class="footer-bloques">
@@ -67,7 +151,7 @@
   </div>
   <div class="bloque">
     <h4>Dirección</h4>
-    <p><a href=https://maps.app.goo.gl/oc33pURwxrt7ohYJ9>Avd. Salud Gutiérrez, s/n<br>Alcalá de Guadaíra (Sevilla)</a></p>
+    <p><a href="https://maps.app.goo.gl/oc33pURwxrt7ohYJ9">Avd. Salud Gutiérrez, s/n<br>Alcalá de Guadaíra (Sevilla)</a></p>
   </div>
   <div class="bloque">
     <h4>Contacto</h4>
@@ -80,7 +164,6 @@
 </footer>
 
 <script>
-  // Menú hamburguesa
   const toggleBtn = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
 
@@ -98,6 +181,46 @@
 </script>
 
 <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const bloques = document.querySelectorAll(".tarjetas-unidad-dia");
+
+  bloques.forEach((bloque) => {
+    const tarjetas = bloque.querySelectorAll(".tarjeta-servicio");
+
+    tarjetas.forEach((tarjeta, index) => {
+      if (window.innerWidth <= 950) {
+        tarjeta.classList.add("entrada-izquierda");
+      } else {
+        if (index % 2 === 0) {
+          tarjeta.classList.add("entrada-izquierda");
+        } else {
+          tarjeta.classList.add("entrada-derecha");
+        }
+      }
+    });
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.18
+    }
+  );
+
+  document.querySelectorAll(".tarjeta-servicio").forEach((tarjeta) => {
+    observer.observe(tarjeta);
+  });
+});
+</script>
+
+<script>
   if ("scrollRestoration" in history) {
     history.scrollRestoration = "manual";
   }
@@ -106,6 +229,6 @@
     window.scrollTo(0, 0);
   });
 </script>
-  
+
 </body>
 </html>
