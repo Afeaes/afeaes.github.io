@@ -186,6 +186,83 @@
     window.scrollTo(0, 0);
   });
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const inputArchivo = document.getElementById("archivoPdf");
+  const zonaSubida = document.getElementById("zonaSubida");
+  const btnBuscarArchivo = document.getElementById("btnBuscarArchivo");
+  const archivoSeleccionado = document.getElementById("archivoSeleccionado");
+  const formSocio = document.getElementById("formSocio");
+
+  btnBuscarArchivo.addEventListener("click", function () {
+    inputArchivo.click();
+  });
+
+  inputArchivo.addEventListener("change", function () {
+    mostrarArchivo();
+  });
+
+  ["dragenter", "dragover"].forEach((evento) => {
+    zonaSubida.addEventListener(evento, function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      zonaSubida.classList.add("dragover");
+    });
+  });
+
+  ["dragleave", "drop"].forEach((evento) => {
+    zonaSubida.addEventListener(evento, function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      zonaSubida.classList.remove("dragover");
+    });
+  });
+
+  zonaSubida.addEventListener("drop", function (e) {
+    const archivos = e.dataTransfer.files;
+    if (archivos.length > 0) {
+      inputArchivo.files = archivos;
+      mostrarArchivo();
+    }
+  });
+
+  function mostrarArchivo() {
+    if (inputArchivo.files.length > 0) {
+      archivoSeleccionado.textContent = "Archivo seleccionado: " + inputArchivo.files[0].name;
+    } else {
+      archivoSeleccionado.textContent = "";
+    }
+  }
+
+  formSocio.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const nombre = document.getElementById("nombre").value.trim();
+    const apellidos = document.getElementById("apellidos").value.trim();
+    const telefono = document.getElementById("telefono").value.trim();
+    const email = document.getElementById("email").value.trim();
+
+    const destinatario = "afeaes@hotmail.com";
+    const asunto = encodeURIComponent("Solicitud de alta como socio/a");
+    const cuerpo = encodeURIComponent(
+`Hola,
+
+Adjunto mi solicitud de alta como socio/a.
+
+Datos de contacto:
+- Nombre: ${nombre}
+- Apellidos: ${apellidos}
+- Teléfono: ${telefono}
+- Email: ${email}
+
+Un saludo.`
+    );
+
+    window.location.href = `mailto:${destinatario}?subject=${asunto}&body=${cuerpo}`;
+  });
+});
+</script>
   
 </body>
 </html>
