@@ -2114,6 +2114,10 @@ header p {
   opacity: 0;
 }
 
+.btn-label-archivo {
+  display: inline-block;
+}
+
 @media (max-width: 900px) {
   .bloque-socio {
     grid-template-columns: 1fr;
