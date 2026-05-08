@@ -57,7 +57,87 @@
 </nav>
 
 <main>
-  <!-- Aquí va el contenido específico de cada página -->
+  <section class="hazte-socio">
+  <h2>Hazte socio</h2>
+  <p class="hazte-socio-intro">
+    Puedes descargar la ficha de inscripción, completarla y enviárnosla a través del siguiente formulario.
+  </p>
+
+  <div class="bloque-socio">
+    <div class="documento-inscripcion">
+      <h3>Ficha de inscripción</h3>
+
+      <a href="docs/ficha-inscripcion.pdf" download class="pdf-miniatura-link">
+        <div class="pdf-miniatura">
+          <iframe
+            src="docs/ficha-inscripcion.pdf#toolbar=0&navpanes=0&scrollbar=0&page=1"
+            title="Vista previa de la ficha de inscripción">
+          </iframe>
+          <div class="pdf-overlay">
+            <span>Descargar PDF</span>
+          </div>
+        </div>
+      </a>
+
+      <p class="texto-ayuda-pdf">
+        Haz clic sobre la vista previa para descargar la ficha de inscripción.
+      </p>
+    </div>
+
+    <div class="formulario-socio">
+      <h3>Envío de solicitud</h3>
+
+      <form id="formSocio">
+        <div class="fila-formulario">
+          <div class="campo-formulario">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required>
+          </div>
+
+          <div class="campo-formulario">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" id="apellidos" name="apellidos" required>
+          </div>
+        </div>
+
+        <div class="fila-formulario">
+          <div class="campo-formulario">
+            <label for="telefono">Número de teléfono</label>
+            <input type="tel" id="telefono" name="telefono" required>
+          </div>
+
+          <div class="campo-formulario">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        </div>
+
+        <div class="campo-formulario">
+          <label for="archivoPdf">Adjuntar ficha cumplimentada</label>
+
+          <div class="zona-subida" id="zonaSubida">
+            <input type="file" id="archivoPdf" name="archivoPdf" accept="application/pdf" hidden>
+            <p id="textoSubida">
+              Arrastra aquí tu archivo PDF o pulsa el botón para buscarlo.
+            </p>
+            <button type="button" class="btn-secundario" id="btnBuscarArchivo">
+              Buscar archivo
+            </button>
+          </div>
+
+          <p class="archivo-seleccionado" id="archivoSeleccionado"></p>
+        </div>
+
+        <button type="submit" class="btn-enviar-socio">Enviar solicitud</button>
+      </form>
+
+      <p class="nota-envio">
+        Al pulsar en “Enviar solicitud”, se abrirá tu aplicación de correo con los datos preparados.
+        Solo tendrás que adjuntar el PDF seleccionado y enviar el mensaje.
+      </p>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer class="footer-bloques">
