@@ -1908,3 +1908,202 @@ header p {
 .familia-cuidadores .unidad-dia-intro {
   max-width: 950px;
 }
+
+
+
+.hazte-socio {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.hazte-socio h2 {
+  font-size: 2.3rem;
+  color: #2f5a3f;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.hazte-socio-intro {
+  max-width: 820px;
+  margin: 0 auto 45px auto;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #556b5d;
+}
+
+.bloque-socio {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.documento-inscripcion,
+.formulario-socio {
+  background: #ffffff;
+  border: 2px solid #8fb09a;
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 8px 20px rgba(60, 90, 70, 0.07);
+}
+
+.documento-inscripcion h3,
+.formulario-socio h3 {
+  font-size: 1.45rem;
+  color: #2f5a3f;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.pdf-miniatura-link {
+  text-decoration: none;
+}
+
+.pdf-miniatura {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid #cdded3;
+  background: #f6faf7;
+}
+
+.pdf-miniatura iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  pointer-events: none;
+}
+
+.pdf-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(47, 90, 63, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.pdf-overlay span {
+  background: rgba(255, 255, 255, 0.95);
+  color: #2f5a3f;
+  font-weight: 700;
+  padding: 12px 18px;
+  border-radius: 999px;
+}
+
+.pdf-miniatura:hover .pdf-overlay {
+  opacity: 1;
+}
+
+.texto-ayuda-pdf,
+.nota-envio,
+.archivo-seleccionado {
+  margin-top: 14px;
+  text-align: center;
+  color: #5b6f61;
+  line-height: 1.7;
+}
+
+.fila-formulario {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.campo-formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo-formulario label {
+  font-weight: 700;
+  color: #2f5a3f;
+  margin-bottom: 8px;
+}
+
+.campo-formulario input {
+  border: 1.5px solid #c9dbcf;
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+}
+
+.campo-formulario input:focus {
+  border-color: #8fb09a;
+  box-shadow: 0 0 0 3px rgba(143, 176, 154, 0.18);
+}
+
+.zona-subida {
+  margin-top: 6px;
+  border: 2px dashed #8fb09a;
+  border-radius: 18px;
+  padding: 28px 20px;
+  text-align: center;
+  background: #f7fbf8;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.zona-subida.dragover {
+  background: #eef7f1;
+  border-color: #6f977c;
+}
+
+.zona-subida p {
+  margin: 0 0 14px 0;
+  color: #556b5d;
+  line-height: 1.7;
+}
+
+.btn-secundario,
+.btn-enviar-socio {
+  border: none;
+  border-radius: 999px;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-secundario {
+  background: #dbece1;
+  color: #2f5a3f;
+  padding: 12px 18px;
+}
+
+.btn-enviar-socio {
+  margin-top: 8px;
+  width: 100%;
+  background: #7fa98c;
+  color: white;
+  padding: 14px 20px;
+  font-size: 1rem;
+}
+
+.btn-secundario:hover,
+.btn-enviar-socio:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+@media (max-width: 900px) {
+  .bloque-socio {
+    grid-template-columns: 1fr;
+  }
+
+  .fila-formulario {
+    grid-template-columns: 1fr;
+  }
+
+  .pdf-miniatura {
+    height: 360px;
+  }
+}
