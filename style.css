@@ -2106,6 +2106,14 @@ header p {
   opacity: 0.95;
 }
 
+.input-archivo-oculto {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
 @media (max-width: 900px) {
   .bloque-socio {
     grid-template-columns: 1fr;
