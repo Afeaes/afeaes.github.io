@@ -2012,12 +2012,20 @@ header p {
 }
 
 .texto-ayuda-pdf,
-.nota-envio,
-.archivo-seleccionado {
+.nota-envio {
   margin-top: 14px;
   text-align: center;
   color: #5b6f61;
   line-height: 1.7;
+}
+
+.archivo-seleccionado {
+  margin-top: 14px;
+  text-align: center;
+  color: #2f5a3f;
+  line-height: 1.7;
+  font-weight: 700;
+  word-break: break-word;
 }
 
 .fila-formulario {
@@ -2073,6 +2081,16 @@ header p {
   margin: 0 0 14px 0;
   color: #556b5d;
   line-height: 1.7;
+}
+
+.zona-subida.archivo-cargado {
+  background: #eaf6ee;
+  border-color: #5f8f70;
+}
+
+.zona-subida.archivo-cargado p {
+  color: #2f5a3f;
+  font-weight: 700;
 }
 
 .btn-secundario,
