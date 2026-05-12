@@ -60,7 +60,8 @@
   <section class="hazte-socio">
     <h2>Hazte socio</h2>
     <p class="hazte-socio-intro">
-      Puedes descargar la ficha de inscripción, completarla y enviárnosla a través del siguiente formulario.
+      Para hacerte socio de AFEAES, solo tienes que descargar la ficha de inscripción,
+      cumplimentarla y enviárnosla por correo electrónico o por WhatsApp.
     </p>
 
     <div class="bloque-socio">
@@ -84,62 +85,57 @@
         </p>
       </div>
 
-      <div class="formulario-socio">
-        <h3>Envío de solicitud</h3>
+      <div class="instrucciones-socio">
+        <h3>Cómo enviar tu solicitud</h3>
 
-        <form id="formSocio">
-          <div class="fila-formulario">
-            <div class="campo-formulario">
-              <label for="nombre">Nombre</label>
-              <input type="text" id="nombre" name="nombre" required>
-            </div>
-
-            <div class="campo-formulario">
-              <label for="apellidos">Apellidos</label>
-              <input type="text" id="apellidos" name="apellidos" required>
+        <div class="pasos-socio">
+          <div class="paso-socio">
+            <span class="numero-paso">1</span>
+            <div>
+              <h4>Descarga la ficha</h4>
+              <p>Descarga el documento de inscripción desde esta misma página.</p>
             </div>
           </div>
 
-          <div class="fila-formulario">
-            <div class="campo-formulario">
-              <label for="telefono">Número de teléfono</label>
-              <input type="tel" id="telefono" name="telefono" required>
-            </div>
-
-            <div class="campo-formulario">
-              <label for="email">Correo electrónico</label>
-              <input type="email" id="email" name="email" required>
+          <div class="paso-socio">
+            <span class="numero-paso">2</span>
+            <div>
+              <h4>Rellénala con tus datos</h4>
+              <p>Completa la ficha con la información necesaria de forma clara y legible.</p>
             </div>
           </div>
 
-          <div class="campo-formulario">
-            <label for="archivoPdf">Adjuntar ficha cumplimentada</label>
-
-            <div class="zona-subida" id="zonaSubida">
-              <input
-                type="file"
-                id="archivoPdf"
-                name="archivoPdf"
-                accept=".pdf,application/pdf,application/x-pdf"
-                class="input-archivo-oculto"
-              >
-              <p id="textoSubida">
-                Arrastra aquí tu archivo PDF o pulsa el botón para buscarlo.
-              </p>
-              <label for="archivoPdf" class="btn-secundario btn-label-archivo">
-                Buscar archivo
-              </label>
+          <div class="paso-socio">
+            <span class="numero-paso">3</span>
+            <div>
+              <h4>Envíanosla</h4>
+              <p>Puedes mandarnos la ficha cumplimentada por correo electrónico o por WhatsApp.</p>
             </div>
+          </div>
+        </div>
 
-            <p class="archivo-seleccionado" id="archivoSeleccionado"></p>
+        <div class="canales-envio">
+          <div class="canal-envio">
+            <h4>Envío por correo electrónico</h4>
+            <p>
+              <a href="mailto:afeaes@hotmail.com">afeaes@hotmail.com</a><br>
+              <a href="mailto:direccionafeaes@gmail.com">direccionafeaes@gmail.com</a>
+            </p>
           </div>
 
-          <button type="submit" class="btn-enviar-socio">Enviar solicitud</button>
-        </form>
+          <div class="canal-envio">
+            <h4>Envío por WhatsApp</h4>
+            <p>
+              <a href="https://wa.me/34600000000" target="_blank" rel="noopener noreferrer">
+                600 00 00 00
+              </a>
+            </p>
+          </div>
+        </div>
 
-        <p class="nota-envio">
-          Al pulsar en “Enviar solicitud”, se abrirá tu aplicación de correo con los datos preparados.
-          Solo tendrás que adjuntar el PDF seleccionado y enviar el mensaje.
+        <p class="nota-socio">
+          Si tienes cualquier duda durante el proceso, puedes ponerte en contacto con nosotros
+          y te ayudaremos.
         </p>
       </div>
     </div>
@@ -191,84 +187,6 @@
   window.addEventListener("load", function () {
     window.scrollTo(0, 0);
   });
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const inputArchivo = document.getElementById("archivoPdf");
-  const zonaSubida = document.getElementById("zonaSubida");
-  const archivoSeleccionado = document.getElementById("archivoSeleccionado");
-  const textoSubida = document.getElementById("textoSubida");
-  const formSocio = document.getElementById("formSocio");
-
-  inputArchivo.addEventListener("change", function () {
-    mostrarArchivo();
-  });
-
-  ["dragenter", "dragover"].forEach((evento) => {
-    zonaSubida.addEventListener(evento, function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      zonaSubida.classList.add("dragover");
-    });
-  });
-
-  ["dragleave", "drop"].forEach((evento) => {
-    zonaSubida.addEventListener(evento, function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      zonaSubida.classList.remove("dragover");
-    });
-  });
-
-  zonaSubida.addEventListener("drop", function (e) {
-    const archivos = e.dataTransfer.files;
-    if (archivos.length > 0) {
-      inputArchivo.files = archivos;
-      mostrarArchivo();
-    }
-  });
-
-  function mostrarArchivo() {
-    if (inputArchivo.files && inputArchivo.files.length > 0) {
-      const archivo = inputArchivo.files[0];
-      archivoSeleccionado.textContent = "PDF cargado: " + archivo.name;
-      textoSubida.textContent = "Archivo preparado correctamente.";
-      zonaSubida.classList.add("archivo-cargado");
-    } else {
-      archivoSeleccionado.textContent = "";
-      textoSubida.textContent = "Arrastra aquí tu archivo PDF o pulsa el botón para buscarlo.";
-      zonaSubida.classList.remove("archivo-cargado");
-    }
-  }
-
-  formSocio.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const nombre = document.getElementById("nombre").value.trim();
-    const apellidos = document.getElementById("apellidos").value.trim();
-    const telefono = document.getElementById("telefono").value.trim();
-    const email = document.getElementById("email").value.trim();
-
-    const destinatario = "direccionafeaes@gmail.com,afeaes@hotmail.com";
-    const asunto = encodeURIComponent("Solicitud de alta como socio/a");
-    const cuerpo = encodeURIComponent(
-`Hola,
-
-Adjunto mi solicitud de alta como socio/a.
-
-Datos de contacto:
-- Nombre: ${nombre}
-- Apellidos: ${apellidos}
-- Teléfono: ${telefono}
-- Email: ${email}
-
-Un saludo.`
-    );
-
-    window.location.href = `mailto:${destinatario}?subject=${asunto}&body=${cuerpo}`;
-  });
-});
 </script>
 
 </body>
