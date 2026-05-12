@@ -256,6 +256,7 @@
   <p>¿Tienes dudas o sugerencias? Escríbenos:</p>
 
   <form action="https://formsubmit.co/afeaes@hotmail.com" method="POST">
+    
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="name" required>
 
@@ -265,15 +266,29 @@
     <label for="mensaje">Mensaje:</label>
     <textarea id="mensaje" name="message" rows="5" required></textarea>
 
+    <!-- Asunto del correo que recibirá AFEAES -->
     <input type="hidden" name="_subject" value="Nuevo mensaje desde la web de AFEAES">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://afeaes.github.io/gracias.html">
+
+    <!-- Plantilla más ordenada del correo recibido -->
     <input type="hidden" name="_template" value="table">
 
+    <!-- Evita captcha de FormSubmit -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <!-- Redirección tras enviar -->
+    <input type="hidden" name="_next" value="https://afeaes.github.io/gracias.html">
+
+    <!-- Campo anti-spam invisible -->
     <input type="text" name="_honey" style="display:none">
 
-    <button type="submit">Enviar</button>
+    <button type="submit">Enviar mensaje</button>
   </form>
+
+  <p class="texto-privacidad-formulario">
+    Al enviar este formulario, aceptas que AFEAES trate los datos facilitados con la finalidad de responder a tu consulta.
+    Puedes consultar más información en nuestra
+    <a href="politica-privacidad.html">Política de privacidad</a>.
+  </p>
 </section>
 
 <footer class="footer-bloques">
