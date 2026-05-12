@@ -102,17 +102,13 @@
       </article>
 
       <article class="bloque-beneficio bloque-beneficio-destacado">
-        <h3>Posibles beneficios fiscales</h3>
+        <h3>Beneficios fiscales</h3>
         <p>
-          La cuota de socio puede dar derecho a deducción fiscal cuando se cumplan los
-          requisitos legales aplicables. En términos generales, la normativa prevé una
-          deducción del 80% para los primeros 250 € y del 40% para el importe restante,
-          pudiendo llegar al 45% en determinados supuestos de fidelidad.
+          La cuota de socio puede conllevar ventajas fiscales cuando se cumplan los requisitos
+          establecidos en cada momento por la normativa aplicable.
         </p>
         <p>
-          Para ello, la cuota no debe equivaler al derecho a recibir una prestación presente
-          o futura y la entidad debe cumplir el régimen fiscal correspondiente. Si necesitas
-          confirmación sobre tu caso concreto, consúltanos.
+          Para más información sobre este aspecto, pueden consultarnos sin problema.
         </p>
       </article>
 
@@ -171,5 +167,45 @@
   });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const bloques = document.querySelectorAll(".grid-beneficios");
+
+  bloques.forEach((bloque) => {
+    const tarjetas = bloque.querySelectorAll(".bloque-beneficio");
+
+    tarjetas.forEach((tarjeta, index) => {
+      if (window.innerWidth <= 900) {
+        tarjeta.classList.add("entrada-izquierda");
+      } else {
+        if (index % 2 === 0) {
+          tarjeta.classList.add("entrada-izquierda");
+        } else {
+          tarjeta.classList.add("entrada-derecha");
+        }
+      }
+    });
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.18
+    }
+  );
+
+  document.querySelectorAll(".bloque-beneficio").forEach((tarjeta) => {
+    observer.observe(tarjeta);
+  });
+});
+</script>
+  
 </body>
 </html>
