@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mensaje enviado - AFEAES</title>
+
+  <!-- Fuente y estilos -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .mensaje-gracias {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .mensaje-gracias h2 {
+      margin-bottom: 20px;
+    }
+
+    .mensaje-gracias p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .boton-volver {
+      display: inline-block;
+      padding: 12px 28px;
+      background-color: #7bbf9e;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 700;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .boton-volver:hover {
+      background-color: #5fae8a;
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>AFEAES</h1>
+    <p>MENSAJE ENVIADO</p>
+  </header>
+
+  <nav>
+    <div class="nav-container">
+      <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li class="has-submenu">
+          <a href="index.html#nuestra-asociacion">Nuestra asociación</a>
+          <ul class="submenu">
+            <li><a href="quienes-somos.html">Quiénes somos</a></li>
+            <li><a href="equipo-humano.html">Equipo humano</a></li>
+            <li><a href="junta-directiva.html">Junta directiva</a></li>
+            <li><a href="instalaciones.html">Instalaciones</a></li>
+            <li><a href="codigo-etico.html">Código ético</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu">
+          <a href="index.html#servicios">Servicios</a>
+          <ul class="submenu">
+            <li><a href="talleres.html">Unidad de memoria</a></li>
+            <li><a href="unidad-dia.html">Unidad de día</a></li>
+            <li><a href="familia-cuidadores.html">Para familia y cuidadores</a></li>
+            <li><a href="voluntariado.html">Para voluntariado</a></li>
+            <li><a href="servicios-socios.html">Para socios</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu">
+          <a href="index.html#socios">Socios</a>
+          <ul class="submenu">
+            <li><a href="beneficios.html">Beneficios</a></li>
+            <li><a href="hazte-socio.html">Hacerme socio</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#contacto">Contáctanos</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="seccion visible fade-in mensaje-gracias">
+      <h2>Gracias por contactar con AFEAES</h2>
+
+      <p>
+        Hemos recibido tu mensaje correctamente.  
+        Nuestro equipo revisará la consulta y se pondrá en contacto contigo lo antes posible.
+      </p>
+
+      <p>
+        Si necesitas una atención más directa, también puedes contactar con nosotros a través del teléfono
+        <strong>955950821 / 692199554</strong> o del correo
+        <strong>afeaes@hotmail.com</strong>.
+      </p>
+
+      <a href="index.html#inicio" class="boton-volver">Volver al inicio</a>
+    </section>
+  </main>
+
+  <footer class="footer-bloques">
+    <div class="bloque">
+      <h4>Horarios</h4>
+      <p>Atención al público:<br>De 9:00 a 14:30<br><br>Horario de apertura:<br>De 9:00 a 18:00</p>
+    </div>
+
+    <div class="bloque">
+      <h4>Dirección</h4>
+      <p>
+        <a href="https://maps.app.goo.gl/oc33pURwxrt7ohYJ9">
+          Avd. Salud Gutiérrez, s/n<br>Alcalá de Guadaíra (Sevilla)
+        </a>
+      </p>
+    </div>
+
+    <div class="bloque">
+      <h4>Contacto</h4>
+      <p>
+        <a href="mailto:afeaes@hotmail.com">afeaes@hotmail.com</a><br>
+        Tel: 955950821 / 692199554
+      </p>
+    </div>
+
+    <div class="bloque bloque-siguenos">
+      <h4>Síguenos</h4>
+      <p>
+        <a href="https://www.facebook.com/esperanza.perezgarcia.395?locale=es_ES">Facebook</a> |
+        <a href="https://www.instagram.com/afeaes/?utm_source=ig_web_button_share_sheet">Instagram</a>
+      </p>
+    </div>
+
+    <div class="bloque bloque-legal">
+      <p>
+        AFEAES trata los datos personales que se remitan a través de sus canales de contacto con la finalidad de atender consultas, solicitudes y comunicaciones relacionadas con la asociación.
+        Puedes consultar la información legal y de privacidad en
+        <a href="aviso-legal.html">Aviso legal</a> y
+        <a href="politica-privacidad.html">Política de privacidad</a>.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Menú hamburguesa
+    const toggle = document.querySelector('.menu-toggle');
+    const links = document.querySelector('.nav-links');
+
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        links.classList.toggle('show');
+      });
+    }
+
+    // Efecto fade-in
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+      threshold: 0.2
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+
+  <script>
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
+    window.addEventListener("load", function () {
+      window.scrollTo(0, 0);
+    });
+  </script>
+
+</body>
+</html>
