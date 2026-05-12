@@ -254,6 +254,7 @@
 <section id="contacto" class="seccion">
   <h2>Contáctanos</h2>
   <p>¿Tienes dudas o sugerencias? Escríbenos:</p>
+
   <form action="https://formsubmit.co/afeaes@hotmail.com" method="POST">
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="name" required>
@@ -264,8 +265,12 @@
     <label for="mensaje">Mensaje:</label>
     <textarea id="mensaje" name="message" rows="5" required></textarea>
 
+    <input type="hidden" name="_subject" value="Nuevo mensaje desde la web de AFEAES">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_next" value="https://afeaes.github.io/gracias.html">
+    <input type="hidden" name="_template" value="table">
+
+    <input type="text" name="_honey" style="display:none">
 
     <button type="submit">Enviar</button>
   </form>
