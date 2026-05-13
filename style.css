@@ -2084,6 +2084,18 @@ header p {
   }
 }
 
+@media (max-width: 768px) {
+  .titulo-principal {
+    padding: 1.2rem 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  #inicio .titulo-principal h1 {
+    font-size: 2.05rem;
+    line-height: 1.18;
+    margin-bottom: 0;
+  }
+}
 
 @media (max-width: 768px) {
   .inicio-bloques {
