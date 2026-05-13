@@ -1895,7 +1895,7 @@ header p {
 
   header::before {
     background-size: cover;
-    background-position: center 38%;
+    background-position: center 30%;
   }
 
   header h1 {
