@@ -339,15 +339,22 @@
   // Mostrar solo la sección correspondiente al hash
   const secciones = document.querySelectorAll('.seccion');
 
-  function mostrarSeccion() {
-    const hash = window.location.hash || '#inicio';
-    secciones.forEach(sec => {
-      sec.classList.toggle('visible', '#' + sec.id === hash);
-    });
-  }
+function mostrarSeccion() {
+  const hash = window.location.hash || '#inicio';
 
-  window.addEventListener('load', mostrarSeccion);
-  window.addEventListener('hashchange', mostrarSeccion);
+  secciones.forEach(sec => {
+    sec.classList.toggle('visible', '#' + sec.id === hash);
+  });
+
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'auto'
+  });
+}
+
+window.addEventListener('load', mostrarSeccion);
+window.addEventListener('hashchange', mostrarSeccion);
 </script>
   
 <script>
