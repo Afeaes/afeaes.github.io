@@ -1886,8 +1886,8 @@ header p {
 
 @media (max-width: 768px) {
   header {
-    height: 150px;
-    min-height: 150px;
+    height: 160px;
+    min-height: 160px;
     padding: 0 16px;
 
     display: flex;
