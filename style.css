@@ -2395,13 +2395,13 @@ header p {
 
   .tarjeta-servicio {
     flex-direction: row;
-    min-height: 275px;
+    min-height: 245px;
     border-radius: 20px;
   }
 
   .tarjeta-servicio-img {
-    width: 40%;
-    min-width: 40%;
+    width: 42%;
+    min-width: 42%;
     height: auto;
   }
 
@@ -2413,22 +2413,21 @@ header p {
   }
 
   .tarjeta-servicio-texto {
-    width: 60%;
+    width: 58%;
     min-width: 0;
-    padding: 8px 14px 14px;
+    padding: 16px 14px;
     text-align: center;
-    justify-content: flex-start;
   }
 
   .tarjeta-servicio-texto h4 {
-    font-size: 1.1rem;
-    line-height: 1.16;
-    margin: 0 0 8px;
+    font-size: 1rem;
+    line-height: 1.22;
+    margin-bottom: 8px;
   }
 
   .tarjeta-servicio-texto p {
-    font-size: 0.93rem;
-    line-height: 1.43;
+    font-size: 0.86rem;
+    line-height: 1.45;
   }
 }
 
