@@ -2417,17 +2417,22 @@ header p {
     min-width: 0;
     padding: 16px 14px;
     text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .tarjeta-servicio-texto h4 {
     font-size: 1rem;
     line-height: 1.22;
-    margin-bottom: 8px;
+    margin: 0 0 8px;
   }
 
   .tarjeta-servicio-texto p {
     font-size: 0.86rem;
     line-height: 1.45;
+    margin: 0;
   }
 }
 
