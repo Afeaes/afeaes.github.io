@@ -2600,7 +2600,7 @@ header p {
   .galeria-bloque:nth-child(even) {
     flex-direction: column;
     gap: 16px;
-    margin: 32px 0 100px;
+    margin: 0px 0 150px;
     padding: 0 16px;
   }
 
