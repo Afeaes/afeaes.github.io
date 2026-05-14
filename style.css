@@ -2549,12 +2549,14 @@ header p {
   .contenedor-parrafos-imagen {
     flex-direction: column;
     align-items: center;
-    gap: 18px;
+    gap: 0;
+    margin-bottom: 2rem;
   }
 
   .contenedor-parrafos-imagen .parrafo,
   .contenedor-parrafos-imagen .parrafo2 {
     width: 100%;
+    margin-bottom: 0;
   }
 
   .circulo,
