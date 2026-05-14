@@ -2294,7 +2294,7 @@ header p {
 
 @media (max-width: 760px) {
   .organigrama-asociacion-section {
-    padding: 72px 16px 82px;
+    padding: 16px 16px;
   }
 
   .organigrama-asociacion-shell {
