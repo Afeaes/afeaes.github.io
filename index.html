@@ -318,12 +318,10 @@
   const toggleBtn = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
 
-  // Abrir/cerrar menú al hacer clic en el botón hamburguesa
   toggleBtn.addEventListener('click', () => {
     navLinks.classList.toggle('show');
   });
 
-  // Cerrar menú al hacer clic en un enlace del menú (solo si está abierto)
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
       if (navLinks.classList.contains('show')) {
@@ -332,25 +330,27 @@
     });
   });
 
-  // Mostrar solo la sección correspondiente al hash
   const secciones = document.querySelectorAll('.seccion');
 
-function mostrarSeccion() {
-  const hash = window.location.hash || '#inicio';
+  function mostrarSeccion() {
+    const hash = window.location.hash || '#inicio';
 
-  secciones.forEach(sec => {
-    sec.classList.toggle('visible', '#' + sec.id === hash);
-  });
+    secciones.forEach(sec => {
+      sec.classList.toggle('visible', '#' + sec.id === hash);
+    });
 
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: 'auto'
-  });
-}
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'auto'
+      });
+    }, 0);
+  }
 
-window.addEventListener('load', mostrarSeccion);
-window.addEventListener('hashchange', mostrarSeccion);
+  window.addEventListener('DOMContentLoaded', mostrarSeccion);
+  window.addEventListener('load', mostrarSeccion);
+  window.addEventListener('hashchange', mostrarSeccion);
 </script>
   
 <script>
