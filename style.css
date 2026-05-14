@@ -2544,3 +2544,29 @@ header p {
     opacity: 1;
   }
 }
+
+@media (max-width: 768px) {
+  .contenedor-parrafos-imagen {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .contenedor-parrafos-imagen .parrafo,
+  .contenedor-parrafos-imagen .parrafo2 {
+    width: 100%;
+  }
+
+  .circulo,
+  .circuloIzq {
+    float: none;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+    order: 2;
+  }
+
+  .contenedor-parrafos-imagen .parrafo {
+    order: 1;
+  }
+}
