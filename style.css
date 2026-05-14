@@ -2136,10 +2136,29 @@ header p {
 }
 
 @media (max-width: 768px) {
-  .tarjeta-galeria {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    padding: 16px 0;
+  }
+
+  .grid-container .tarjeta-galeria {
     width: 100%;
-    aspect-ratio: auto;
-    min-height: 220px;
+    flex: none;
+    aspect-ratio: 1 / 1;
+    min-height: 0;
+  }
+
+  .grid-container .tarjeta-galeria h3 {
+    font-size: 1rem;
+    padding: 8px;
+  }
+
+  .grid-container .tarjeta-galeria:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    width: calc((100% - 18px) / 2);
+    justify-self: center;
   }
 }
 
