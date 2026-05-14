@@ -2550,7 +2550,7 @@ header p {
     flex-direction: column;
     align-items: center;
     gap: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
   }
 
   .contenedor-parrafos-imagen .parrafo,
