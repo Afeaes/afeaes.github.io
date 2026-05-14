@@ -2572,3 +2572,43 @@ header p {
     order: 1;
   }
 }
+
+@media (max-width: 768px) {
+  .galeria-bloque,
+  .galeria-bloque:nth-child(even) {
+    flex-direction: column;
+    gap: 16px;
+    margin: 32px 0;
+    padding: 0 16px;
+  }
+
+  .galeria-bloque .texto {
+    order: 1;
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .galeria-bloque .texto h2 {
+    font-size: 1.55rem;
+    margin-bottom: 8px;
+  }
+
+  .galeria-bloque .texto p {
+    font-size: 1rem;
+    line-height: 1.55;
+    text-align: center;
+  }
+
+  .galeria-bloque .slider {
+    order: 2;
+    width: min(100%, 330px);
+    height: 430px;
+  }
+
+  .galeria-bloque .slides img {
+    width: 330px;
+    height: 430px;
+    object-fit: cover;
+  }
+}
